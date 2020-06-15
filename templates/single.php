@@ -1,7 +1,5 @@
+
 <?php
-require '../config/Autoloader.php';
-use \App\config\Autoloader;
-Autoloader::register();
 use App\src\DAO\ArticleDAO;
 use App\src\DAO\CommentDAO;
 ?>
@@ -31,7 +29,7 @@ use App\src\DAO\CommentDAO;
     <?php
     $articles->closeCursor();
     ?>
-    <a href="home.php">Retour à l'accueil</a>
+    <a href="../public/index.php">Retour à l'accueil</a>
     <div id="comments" class="text-left" style="margin-left: 50px">
         <h3>Commentaires</h3>
         <?php
