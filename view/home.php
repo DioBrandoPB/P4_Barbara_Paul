@@ -1,32 +1,22 @@
-
-<?php
-use App\src\DAO\ArticleDAO;
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Mon blog</title>
-</head>
-
-<body>
-<div>
-    <h1>Mon blog</h1>
-    <p>En construction</p>
+<?php $this->title = "Chapitres"; ?>
+    <h1>Chapitres</h1>
+    <div class="Chapitres">
     <?php
-    while($article = $articles->fetch())
+    foreach ($articles as $article)
     {
         ?>
-        <div>
-        <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->id);?>"><?= htmlspecialchars($article->title);?></a></h2>
-            <p><?= htmlspecialchars($article->content);?></p>
-            <p><?= htmlspecialchars($article->author);?></p>
-            <p>Créé le : <?= htmlspecialchars($article->createdAt);?></p>
+        <div class="Billets">
+        <figure class="chapitre col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Fantastique">
+                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+                <figcaption><h3><a href="index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h3>
+            <p><?= htmlspecialchars($article->getContent());?></p>
+            <p>de <?= htmlspecialchars($article->getAuthor());?></p>
+            <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+            </figcaption>
+            </figure>
         </div>
-        <br>
         <?php
     }
-    $articles->closeCursor();
     ?>
 </div>
 </body>

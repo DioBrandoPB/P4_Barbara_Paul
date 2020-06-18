@@ -1,7 +1,8 @@
 <?php
 
 require '../config/dev.php';
-require '../vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
+use App\config\Router;
 
 $router = new \App\config\Router();
 $router->run();

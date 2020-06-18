@@ -6,11 +6,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.php">Jean Forteroche</a>
+            <a class="navbar-brand" href="index.php?route=accueil">Jean Forteroche</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="../chapitres.php">Chapitres</a></li>
+                <li><a href="index.php?route=articles">Chapitres</a></li>
                 <li><a href="../bio.php">À Propos</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
