@@ -2,40 +2,40 @@
 
 namespace App\src\DAO;
 
-use App\src\model\Article;
+use App\src\model\chapitre;
 
 class ArticleDAO extends DAO
 {
     private function buildObject($row)
     {
-        $article = new Article();
-        $article->setId($row['id']);
-        $article->setTitle($row['title']);
-        $article->setContent($row['content']);
-        $article->setAuthor($row['author']);
-        $article->setCreatedAt($row['createdAt']);
-        return $article;
+        $chapitre = new chapitre();
+        $chapitre->setId($row['id']);
+        $chapitre->setTitle($row['title']);
+        $chapitre->setContent($row['content']);
+        $chapitre->setAuthor($row['author']);
+        $chapitre->setCreatedAt($row['createdAt']);
+        return $chapitre;
     }
 
     public function getArticles()
     {
-        $sql = 'SELECT id, title, content, author, createdAt FROM article ORDER BY id DESC';
+        $sql = 'SELECT id, title, content, author, createdAt FROM chapitre ORDER BY id DESC';
         $result = $this->createQuery($sql);
-        $articles = [];
+        $chapitres = [];
         foreach ($result as $row){
-            $articleId = $row['id'];
-            $articles[$articleId] = $this->buildObject($row);
+            $chapitreId = $row['id'];
+            $chapitres[$chapitreId] = $this->buildObject($row);
         }
         $result->closeCursor();
-        return $articles;
+        return $chapitres;
     }
 
-    public function getArticle($articleId)
+    public function getArticle($chapitreId)
     {
-        $sql = 'SELECT id, title, content, author, createdAt FROM article WHERE id = ?';
-        $result = $this->createQuery($sql, [$articleId]);
-        $article = $result->fetch();
+        $sql = 'SELECT id, title, content, author, createdAt FROM chapitre WHERE id = ?';
+        $result = $this->createQuery($sql, [$chapitreId]);
+        $chapitre = $result->fetch();
         $result->closeCursor();
-        return $this->buildObject($article);
+        return $this->buildObject($chapitre);
     }
 }

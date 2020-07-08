@@ -21,11 +21,20 @@ class Router
                 if($_GET['route'] === 'accueil'){
                     $this->frontController->index();
                 }
-                elseif($_GET['route'] === 'articles'){
-                    $this->frontController->articles();
+                elseif($_GET['route'] === 'chapitre'){
+                    $this->frontController->chapitre($_GET['chapitreId']);
                 }
-                elseif($_GET['route'] === 'article'){
-                    $this->frontController->article($_GET['articleId']);
+                elseif($_GET['route'] === 'chapitres'){
+                    $this->frontController->chapitres();
+                }
+                elseif($_GET['route'] === 'biographie'){
+                    $this->frontController->biographie();
+                }
+                elseif($_GET['route'] === 'livres'){
+                    $this->frontController->livres();
+                }
+                elseif($_GET['route'] === 'contact'){
+                    $this->frontController->contact();
                 }
                 else{
                     echo 'page inconnue';

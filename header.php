@@ -10,12 +10,12 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="index.php?route=articles">Chapitres</a></li>
-                <li><a href="../bio.php">À Propos</a></li>
+                <li><a href="index.php?route=chapitres">Chapitres</a></li>
+                <li><a href="index.php?route=biographie">À Propos</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../books.php">Livres</a></li>
-                <li><a href="../contact.php">Contact</a></li>
+                <li><a href="index.php?route=livres">Livres</a></li>
+                <li><a href="index.php?route=contact">Contact</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
