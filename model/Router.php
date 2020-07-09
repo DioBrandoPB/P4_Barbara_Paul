@@ -58,7 +58,7 @@ class Router
                 }
             }
             else{
-                $this->frontController->index();
+                $this->accueilController->index();
             }
         }
         catch (Exception $e)
