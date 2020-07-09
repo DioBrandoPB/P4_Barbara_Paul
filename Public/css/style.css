@@ -14,6 +14,12 @@ h3 {
     margin-bottom: 3em;
 }
 
+h4 {
+    text-align: center;
+    color: #bc81e0;
+    margin-bottom: 3em;
+}
+
 .container-fluid {
     color: black;
     width: 70%;
@@ -65,7 +71,14 @@ body {
 
 .img-responsive {
     width: 100px;
-    height: 100px;
+    height: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-bio {
+    height: 175px;
+    width: 250px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -74,7 +87,7 @@ body {
     text-align: center;
 }
 
-.Articles {
+.chapitres {
     text-align: center;
 }
 
@@ -88,6 +101,11 @@ body {
 #Contact,
 #Livres {
     color: black;
+}
+
+#livresAccueil {
+    margin-top: 4em;
+    margin-bottom: 20em;
 }
 
 .reseauxSociaux {
