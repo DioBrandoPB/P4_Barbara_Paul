@@ -2,15 +2,10 @@
 
 namespace App\controller\Frontend;
 
-use App\model\manager\View;
 
 
-class livresController
+class livresController extends Controller
 {
-    public function __construct()
-    {
-        $this->view = new View();
-    }
 
 
     public function livres() 

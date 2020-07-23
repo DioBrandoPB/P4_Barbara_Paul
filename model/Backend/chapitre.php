@@ -30,6 +30,12 @@ class chapitre
     private $createdAt;
 
     /**
+     * @var string
+     */
+    private $Images;
+    
+
+    /**
      * @return int
      */
     public function getId()
@@ -51,6 +57,15 @@ class chapitre
     public function getTitle()
     {
         return $this->title;
+    }
+
+    public function setImage($Images)
+    {
+        $this->Images = $Images;
+    }
+    public function getImages()
+    {
+        return $this->Images;
     }
 
     /**
@@ -108,4 +123,5 @@ class chapitre
     {
         $this->createdAt = $createdAt;
     }
+    
 }

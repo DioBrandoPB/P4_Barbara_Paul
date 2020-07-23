@@ -1,11 +1,14 @@
 body {
-    background-size: cover;
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     line-height: 2;
+}
+
+h2 {
+    text-align: center;
+    color: #bc81e0;
 }
 
 h3 {
@@ -17,13 +20,11 @@ h3 {
 h4 {
     text-align: center;
     color: #bc81e0;
-    margin-bottom: 3em;
 }
 
 .container-fluid {
     color: black;
     width: 70%;
-    line-height: 3;
 }
 
 .navbar-inverse {
@@ -65,8 +66,49 @@ body {
     text-align: center;
 }
 
-.Chapitres {
-    height: 500px;
+.blocAccroche {
+    margin-bottom: 5em;
+    line-height: 4;
+    padding-right: 26px;
+    padding-left: 26px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.Billets {
+    display: flex;
+    flex-direction: column;
+}
+
+.Billets img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;
+    margin-bottom: 4em;
+}
+
+.Billets figure {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 4em;
+}
+
+.BilletsAccueil {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.BilletsAccueil img {
+    width: 150px;
+}
+
+.BilletsAccueil figure {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .img-responsive {
@@ -77,21 +119,45 @@ body {
 }
 
 .img-bio {
-    height: 175px;
-    width: 250px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
 #comments {
     text-align: center;
+    border: 2em solid #31438a;
+    background-color: #31438a;
+}
+
+.comment {
+    text-align: center;
+    border: 5px solid #31438a;
+    background-color: #fffceb;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    width: 65em;
 }
 
 .chapitres {
     text-align: center;
+    background-color: #fff8f4;
+    border: 2px solid #f1efed;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 80px;
 }
 
-#Billet,
+#Billet {
+    background-color: #fefcf0;
+    line-height: 5;
+}
+
+.BilletsIndex {
+    background-color: #fefcf0;
+}
+
 #Chapitres,
 #Livres,
 #Contact {
@@ -104,8 +170,16 @@ body {
 }
 
 #livresAccueil {
-    margin-top: 4em;
-    margin-bottom: 20em;
+    margin-top: 10em;
+    margin-bottom: 24em;
+}
+
+#Bio {
+    margin-bottom: 5em;
+}
+
+.form-box {
+    margin-bottom: 5em;
 }
 
 .reseauxSociaux {
@@ -113,7 +187,6 @@ body {
     padding: 5px;
     background-color: #1b254d;
     border-top: 1px solid;
-    margin-top: 5em;
 }
 
 .reseauxSociaux .social {
@@ -190,4 +263,21 @@ body {
 #message {
     height: 350px !important;
     ;
+}
+
+@media screen and (max-width: 425px) {
+    .wide {
+        width: 124%;
+    }
+    .Billets img {
+        width: 15em;
+    }
+    #Livres,
+    #Contact,
+    #Bio {
+        width: 120%;
+    }
+    footer {
+        width: 124%;
+    }
 }

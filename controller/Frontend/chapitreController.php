@@ -2,19 +2,10 @@
 
 namespace App\controller\Frontend;
 
-use App\model\manager\ChapitreDAO;
-use App\model\manager\CommentDAO;
-use App\model\manager\View;
 
 
-class chapitreController
+class chapitreController extends Controller
 {
-    public function __construct()
-    {
-        $this->articleDAO = new ChapitreDAO();
-        $this->commentDAO = new CommentDAO();
-        $this->view = new View();
-    }
 
     public function chapitres()
     {
@@ -23,6 +14,15 @@ class chapitreController
             'chapitres' => $chapitres
         ]);
     }
+    public function chapitresAccueil()
+    {
+        $chapitres = $this->articleDAO->getArticles();
+        return $this->view->render('accueil', [
+            'chapitres' => $chapitres
+        ]);
+    }
+
+
 
     public function chapitre($chapitreId)
     {

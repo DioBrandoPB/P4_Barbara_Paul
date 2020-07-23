@@ -3,7 +3,7 @@
 namespace App\model\manager;
 
 use App\model\Backend\Comment;
-
+use App\model\manager\Parameter;
 class CommentDAO extends DAO
 {
     private function buildObject($row)
@@ -35,4 +35,5 @@ class CommentDAO extends DAO
         $sql = 'UPDATE comment SET signalé = ? WHERE id = ?';
         $this->createQuery($sql, [1, $commentId]);
     }
+    
 }

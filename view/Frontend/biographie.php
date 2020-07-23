@@ -1,4 +1,4 @@
-<section id="Billet">
+<section id="Bio">
         <div class="container-fluid ">
 
             <h3>A propos de Jean Forteroche </h3>

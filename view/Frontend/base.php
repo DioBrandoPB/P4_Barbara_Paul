@@ -30,6 +30,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php?route=livres">Livres</a></li>
                 <li><a href="index.php?route=contact">Contact</a></li>
+                <li><a href="index.php?route=admin">Administration</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -47,9 +48,9 @@
     </div>
     <!-- /.container -->
 
-    <div id="content"></div>
+
         <?= $content ?>
-    </div>
+
     <footer>
     <!-- Footer contenant les liens vers les réseaux sociaux -->
     <div class="reseauxSociaux">
