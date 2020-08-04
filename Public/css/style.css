@@ -6,15 +6,23 @@ body {
     line-height: 2;
 }
 
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10em;
+}
+
 h2 {
     text-align: center;
     color: #bc81e0;
+    margin: 20px 0px 72px;
+    font-size: 21px;
 }
 
 h3 {
     text-align: center;
     color: #bc81e0;
-    margin-bottom: 3em;
+    margin-bottom: 4em;
 }
 
 h4 {
@@ -24,7 +32,64 @@ h4 {
 
 .container-fluid {
     color: black;
-    width: 70%;
+    width: 90%;
+    text-align: center;
+    line-height: 5;
+}
+
+.menuDeroulant {
+    float: left;
+    overflow: hidden;
+}
+
+.menuDeroulant .menuBtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 7px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    cursor: pointer;
+}
+
+.navbar a:hover,
+.menuDeroulant:hover .menuBtn {
+    background-color: #121935;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus,
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: #121935;
+}
+
+.index {
+    display: none;
+    position: absolute;
+    background-color: #1b254d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border: black 3px solid;
+}
+
+.index a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.index a:hover {
+    background-color: #121935;
+}
+
+.menuDeroulant:hover .index {
+    display: block;
 }
 
 .navbar-inverse {
@@ -51,12 +116,21 @@ body {
     width: 100%;
 }
 
+#BlocPages h1 {
+    position: relative;
+    margin-top: -20%;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
+}
+
 .logo {
     color: #fff;
     font-weight: 800;
     font-size: 14pt;
     padding: 25px;
     text-align: center;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 .line {
@@ -68,11 +142,16 @@ body {
 
 .blocAccroche {
     margin-bottom: 5em;
-    line-height: 4;
+    line-height: 5;
     padding-right: 26px;
     padding-left: 26px;
     margin-right: auto;
     margin-left: auto;
+    width: 90%;
+}
+
+#Accroche {
+    margin-top: 25%;
 }
 
 .Billets {
@@ -84,8 +163,9 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30em;
+    width: 20em;
     margin-bottom: 4em;
+    border: 2px solid #d2d2d2;
 }
 
 .Billets figure {
@@ -94,6 +174,47 @@ body {
     margin-right: auto;
     width: 50%;
     margin-bottom: 4em;
+    text-align: center;
+}
+
+.Billets figure:hover {
+    border: 1px solid #efefef;
+    background-color: #f9f9f9;
+    transition: transform .2s;
+    border: 1px solid #d2d2d2;
+}
+
+.DernierBillet {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.DernierBillet img {
+    width: 150px;
+}
+
+.DernierBillet img:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
+    border: 5px solid #d2d2d2;
+}
+
+.BilletsIndex {
+    background-color: #f7f7f7a1;
+    line-height: 4;
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.BilletsAccueil {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .BilletsAccueil {
@@ -109,6 +230,13 @@ body {
 .BilletsAccueil figure {
     margin-left: auto;
     margin-right: auto;
+}
+
+.img-responsive:hover {
+    transform: scale(2);
+    transition: transform .2s;
+    margin-bottom: 17%;
+    border: 3px solid #d2d2d2;
 }
 
 .img-responsive {
@@ -149,13 +277,25 @@ body {
     margin-top: 80px;
 }
 
-#Billet {
-    background-color: #fefcf0;
-    line-height: 5;
+.btn-primary:hover {
+    color: #fff;
+    background-color: #1b254d;
+    border-color: #000000;
+    transition-duration: 0.35s;
+    transform: scale(1.2);
+    transition: transform .2s;
 }
 
-.BilletsIndex {
-    background-color: #fefcf0;
+.btn-primary {
+    color: #fff;
+    background-color: #5b547e;
+    border-color: #7101c3;
+    margin: 0px 0px 15px;
+}
+
+.btn.focu #Billet {
+    background-color: #f7f7f7a1;
+    line-height: 5;
 }
 
 #Chapitres,

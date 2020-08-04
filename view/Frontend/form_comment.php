@@ -1,4 +1,4 @@
-<form method="post" action="../public/index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId()); ?>">
+<form method="post" action="index.php?route=addComment&chapitreId=<?= htmlspecialchars($chapitre->getId()); ?>">
     <label for="pseudo">Pseudo</label><br>
     <input type="text" id="pseudo" name="pseudo"><br>
     <label for="content">Message</label><br>

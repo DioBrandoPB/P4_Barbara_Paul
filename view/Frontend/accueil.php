@@ -1,13 +1,13 @@
-<?php $this->title = "Accueil"; 
-use App\model\manager\ChapitreDAO;
-use App\model\manager\DAO;
-use App\model\Backend\chapitre;
-?>
+<?php $this->title = "Accueil"; ?>
+<?php $this->titrepage = "titrepage"; ?>
+<div id="BlocPages">
+    <h1>Accueil</h1></div>
+
 
     <section id="Billet">
         <div class="container-fluid ">
 
-            <h2>BIENVENUE SUR MON SITE </h2>
+            <h2>Bienvenue sur mon site </h2>
             <p>
                 Je suis Jean Forteroche, auteur de Roman vivant à Paris. Sur ce site Vous trouvez mon Blog avec ses différents chapitres, mes autres ouvrages,
                  ma biographie ainsi qu'une page de contact si vous avez des questions. Chaque publication périodique qui composera le roman 
@@ -45,19 +45,21 @@ Ce roman est un cadeau pour vous, la communauté de lecteurs qui s'est constitu�
             </section>
             <section class="BilletsIndex">
             <h3>Billet simple pour l'Alaska : </h3>
-        <div class="BilletsAccueil">
+        <div class="DernierBillet">
 
         <?php
-    foreach ($chapitres as $dernierChapitre)
+    foreach ($chapitres as $chapitre)
     {
         ?>
         
         <figure>
-        
-        <a href="index.php?route=chapitre&chapitreId=<?= htmlspecialchars($dernierChapitre->getId());?>"><figcaption><h4><?= htmlspecialchars($dernierChapitre->getTitle());?></h4>
-                <img src='<?= htmlspecialchars($dernierChapitre->getImages());?>'>
-            <p>de <?= htmlspecialchars($dernierChapitre->getAuthor());?></p>
-            <p>Créé le : <?= date_format(date_create($dernierChapitre->getCreatedAt()), 'd/m/Y');?></p>
+        <p>Dernier chapitre paru :</p>
+                <img src='<?= htmlspecialchars($chapitre->getImages());?>'>
+                <p><?= htmlspecialchars($chapitre->getExtrait());?></p>
+                <a href="index.php?route=chapitre&chapitreId=<?= htmlspecialchars($chapitre->getId());?>">
+            <input class="btn btn-primary" type="submit" value="Lire Plus" /></a>
+            <p>de <?= htmlspecialchars($chapitre->getAuthor());?></p>
+            <p>Créé le : <?= date_format(date_create($chapitre->getCreatedAt()), 'd/m/Y');?></p>
             </figcaption>
             </a>
             </figure>

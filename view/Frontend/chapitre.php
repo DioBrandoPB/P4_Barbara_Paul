@@ -10,10 +10,6 @@
 </div>
 <br>
 
-<div id="comments">
-    
-    <h3>Commentaires</h3>
-    
     <?php
     foreach ($comments as $comment)
     {
@@ -35,5 +31,8 @@
         }
     }
     ?>
-
+<div id="comments" class="text-left" style="margin-left: 50px">
+    <h3>Ajouter un commentaire</h3>
+    <?php include 'form_comment.php';?>
+    <h3>Commentaires</h3>
 </div>

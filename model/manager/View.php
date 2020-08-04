@@ -14,6 +14,7 @@ class View
         $view = $this->renderFile('../view/Frontend/base.php', [
             'title' => $this->title,
             'content' => $content
+            
         ]);
         echo $view;
     }

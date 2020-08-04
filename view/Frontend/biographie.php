@@ -1,7 +1,9 @@
+<div id="BlocPages">
+    <h1>A propos</h1></div>
 <section id="Bio">
         <div class="container-fluid ">
 
-            <h3>A propos de Jean Forteroche </h3>
+            <h2>Jean Forteroche </h2>
             <figure class="chapitre col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Fantastique">
                 <img src="img/JeanForteroche.jpg" class="img-bio">
             </figure>

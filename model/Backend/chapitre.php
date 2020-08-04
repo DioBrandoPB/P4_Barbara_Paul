@@ -18,6 +18,10 @@ class chapitre
      * @var string
      */
     private $content;
+    /**
+     * @var string
+     */
+    private $extrait;
 
     /**
      * @var string
@@ -83,7 +87,20 @@ class chapitre
     {
         return $this->content;
     }
-
+    /**
+    * @return string
+    */
+   public function getExtrait()
+   {
+       return $this->extrait;
+   }
+    /**
+     * @param string $extrait
+     */
+    public function setExtrait($extrait)
+    {
+        $this->extrait = $extrait;
+    }
     /**
      * @param string $content
      */

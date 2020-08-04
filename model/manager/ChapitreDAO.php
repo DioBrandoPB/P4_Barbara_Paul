@@ -13,6 +13,7 @@ class ChapitreDAO extends DAO
         $chapitre->setId($row['id']);
         $chapitre->setTitle($row['title']);
         $chapitre->setContent($row['content']);
+        $chapitre->setExtrait($row['extrait']);
         $chapitre->setAuthor($row['author']);
         $chapitre->setImage($row['Images']);
         $chapitre->setCreatedAt($row['createdAt']);
@@ -21,7 +22,7 @@ class ChapitreDAO extends DAO
 
     public function getArticles()
     {
-        $sql = 'SELECT id, title, content, author, createdAt, Images FROM chapitre ORDER BY id DESC';
+        $sql = 'SELECT * FROM chapitre ORDER BY id DESC';
         $result = $this->createQuery($sql);
         $chapitres = [];
         foreach ($result as $row){
@@ -34,7 +35,7 @@ class ChapitreDAO extends DAO
 
     public function getArticle($chapitreId)
     {
-        $sql = 'SELECT id, title, content, author, createdAt, Images FROM chapitre WHERE id = ?';
+        $sql = 'SELECT * FROM chapitre WHERE id = ?';
         $result = $this->createQuery($sql, [$chapitreId]);
         $chapitre = $result->fetch();
         $result->closeCursor();

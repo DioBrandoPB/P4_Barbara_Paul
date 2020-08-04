@@ -1,8 +1,10 @@
+<div id="BlocPages">
+    <h1>Livres</h1></div>
 <section id="Livres">
     <div class="container-fluid">
         <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h3>Mes Livres</h3>
+            <h2>Mes Romans :</h2>
         </div>
 
         <div align="center">

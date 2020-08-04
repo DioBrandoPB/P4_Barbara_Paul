@@ -1,7 +1,9 @@
+<div id="BlocPages">
+    <h1>Contact</h1></div>
 <section id="Contact">
         <div class="container-fluid">
             <div class="form-box">
-                <h3>Poser moi vos questions</h3>
+                <h2>Poser moi vos questions</h2>
                     <div class="form-group">
                         <label for="name">Nom</label>
                         <input class="form-control" id="name" type="text" name="Name">

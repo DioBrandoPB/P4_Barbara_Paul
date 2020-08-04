@@ -69,6 +69,9 @@ class Router
                 elseif($route === 'admin'){
                     $this->adminController->admin();
                 }
+                elseif($route === 'addComment'){
+                    $this->chapitreController->addComment($this->request->getPost(), $this->request->getGet()->get('chapitreId'));
+                }
                 elseif($route === 'signalCommentaire'){
                     $this->commentController->signalCommentaire($_GET['commentId']);
                 }

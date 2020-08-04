@@ -2,6 +2,9 @@
 
 namespace App\controller\Frontend;
 
+use App\model\Parameter;
+
+
 
 class commentController extends Controller
 {
@@ -11,6 +14,5 @@ class commentController extends Controller
         $this->commentDAO->signalCommentaire($commentId);
         header('Location: ../../index.php');
     }
-
 
 }

@@ -9,11 +9,11 @@ class accueilController extends Controller
 {
 
 
-    public function index() 
+    public function index()
     {
-        return $this->view->render('accueil', []);
-        $chapitres = $this->articleDAO->getLastArticles();
+        $chapitres = $this->chapitreDAO->getLastArticles();
+        return $this->view->render('accueil', [
+            'chapitres' => $chapitres
+        ]);
     }
-
-
 }
