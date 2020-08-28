@@ -9,6 +9,7 @@ use App\controller\Frontend\livresController;
 use App\controller\Frontend\contactController;
 use App\controller\Backend\BackController;
 use App\controller\Backend\adminController;
+use App\controller\Frontend\userController;
 use App\model\Request;
 use Exception;
 
@@ -21,7 +22,7 @@ class Router
     private $bioController;
     private $livresController;
     private $contactController;
-    private $adminController;
+    private $userController;
     private $request;
 
 
@@ -34,6 +35,7 @@ class Router
         $this->bioController = new bioController();
         $this->livresController = new livresController();
         $this->contactController = new contactController();
+        $this->userController = new userController();
         $this->adminController = new adminController();
         $this->request = new Request();
     }
@@ -67,7 +69,7 @@ class Router
                     $this->contactController->contact();
                 }
                 elseif($route === 'admin'){
-                    $this->adminController->admin();
+                    $this->backController->comments();
                 }
                 elseif($route === 'addComment'){
                     $this->chapitreController->addComment($this->request->getPost(), $this->request->getGet()->get('chapitreId'));
@@ -75,7 +77,30 @@ class Router
                 elseif($route === 'signalCommentaire'){
                     $this->commentController->signalCommentaire($_GET['commentId']);
                 }
-                
+                elseif($route === 'unflagComment'){
+                    $this->backController->unflagComment($this->request->getGet()->get('commentId'));
+                }
+                elseif($route === 'deleteComment'){
+                    $this->commentController->deleteComment($_GET['commentId']);
+                }
+                elseif($route === 'register'){
+                    $this->userController->register($this->request->getPost());
+                }
+                elseif($route === 'login'){
+                    $this->userController->login($this->request->getPost());
+                }
+                elseif($route === 'profile'){
+                    $this->backController->profile();
+                }
+                elseif($route === 'updatePassword'){
+                    $this->backController->updatePassword($this->request->getPost());
+                }
+                elseif($route === 'logout'){
+                    $this->backController->logout();
+                }
+                elseif($route === 'administration'){
+                    $this->backController->administration();
+                }
                 else{
                     echo 'page inconnue';
                 }

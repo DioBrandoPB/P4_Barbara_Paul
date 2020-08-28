@@ -2,10 +2,20 @@
 
 namespace App\model\manager;
 
+use App\model\Request;
+
 class View
 {
     private $file;
     private $title;
+    private $request;
+    private $session;
+
+    public function __construct()
+    {
+        $this->request = new Request();
+        $this->session = $this->request->getSession();
+    }
 
     public function render($template, $data = [])
     {
@@ -13,7 +23,20 @@ class View
         $content  = $this->renderFile($this->file, $data);
         $view = $this->renderFile('../view/Frontend/base.php', [
             'title' => $this->title,
-            'content' => $content
+            'content' => $content,
+            'session' => $this->session
+            
+        ]);
+        echo $view;
+    }
+    public function renderBack($template, $data = [])
+    {
+        $this->file = '../view/Backend/'.$template.'.php';
+        $content  = $this->renderFile($this->file, $data);
+        $view = $this->renderFile('../view/Backend/base.php', [
+            'title' => $this->title,
+            'content' => $content,
+            'session' => $this->session
             
         ]);
         echo $view;

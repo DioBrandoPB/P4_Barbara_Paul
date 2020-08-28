@@ -1,16 +1,7 @@
-class Booking {
-    constructor() {
-        this.verificationVide();
-
+function verificationVide() {
+    if (document.getElementById("content").value != "" && document.getElementById("pseudo").value != "") {
+        document.getElementById("commBtn").setAttribute("style", "display : initial!important ");
+    } else {
+        document.getElementById("commBtn").setAttribute("style", "display : none  ");
     }
-    verificationVide() {
-        if (document.getElementById('pseudo').value != "" && document.getElementById('content').value != "") {
-            alert("Reservation annulée");
-        } else {
-            boutonSoumettre.style.cssText = "background: grey; cursor: auto;";
-            boutonSoumettre.disabled = "disabled";
-        }
-    }
-
 }
-let bookingObject = new Booking();

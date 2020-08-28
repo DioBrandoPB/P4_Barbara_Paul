@@ -1,8 +1,8 @@
 <?php
 
-namespace App\model\Backend;
+namespace App\src\model;
 
-class Comment
+class User
 {
     /**
      * @var int
@@ -17,14 +17,12 @@ class Comment
     /**
      * @var string
      */
-    private $content;
+    private $password;
 
     /**
      * @var \DateTime
      */
     private $createdAt;
-
-    
 
     /**
      * @return int
@@ -61,17 +59,17 @@ class Comment
     /**
      * @return string
      */
-    public function getContent()
+    public function getPassword()
     {
-        return $this->content;
+        return $this->password;
     }
 
     /**
-     * @param string $content
+     * @param string $password
      */
-    public function setContent($content)
+    public function setPassword($password)
     {
-        $this->content = $content;
+        $this->password = $password;
     }
 
     /**
@@ -88,21 +86,5 @@ class Comment
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
-    }
-
-        /**
-     * @return bool
-     */
-    public function signalement()
-    {
-        return $this->signalé;
-    }
-
-    /**
-     * @param bool $signalé
-     */
-    public function signalementFait($signalé)
-    {
-        $this->signalé = $signalé;
     }
 }

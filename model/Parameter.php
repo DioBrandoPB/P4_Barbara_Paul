@@ -9,6 +9,7 @@ class Parameter
     public function __construct($parameter)
     {
         $this->parameter = $parameter;
+        
     }
 
     public function get($name)

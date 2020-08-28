@@ -1,9 +1,9 @@
-<div id="BlocPages">
-    <h1>Contact</h1></div>
+<?php $this->title = "Contact"; ?>
+
 <section id="Contact">
         <div class="container-fluid">
             <div class="form-box">
-                <h2>Poser moi vos questions</h2>
+                <h2>Posez moi vos questions</h2>
                     <div class="form-group">
                         <label for="name">Nom</label>
                         <input class="form-control" id="name" type="text" name="Name">
@@ -21,11 +21,10 @@
                         <textarea class="form-control" id="message" name="Message"></textarea>
                     </div>
                     <div class="form-group">
-                                <label><input id="check_1" name="check_1"  type="checkbox" required><small> Vous acceptez nos règles de confidentialité et conditions d'utilisation.</small></input> 
+                                <label><input id="check_1" name="check_1"  type="checkbox" required><small> Vous acceptez nos règles de confidentialité et conditions d'utilisation.</small> </label>
                             </div>
                     <input class="btn btn-primary" type="submit" value="Envoyer" />
             </div>
-            </form>
-        </div>
+
         </div>
     </section>
