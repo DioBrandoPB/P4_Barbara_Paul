@@ -219,158 +219,8 @@ label {
     color: white;
 }
 
-#nouveauChapitre {
-    margin-top: 40px;
-}
-
 
 /*---- En Commun ----*/
-
-
-/*---- Page Accueil ----*/
-
-#msgSession {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    width: 55vh;
-    font-size: 2vw;
-    color: white;
-}
-
-#Accueil {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10em;
-}
-
-
-/*---- Page Accueil ----*/
-
-
-/*---- Page Chapitres ----*/
-
-.Billets img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20em;
-    margin-bottom: 4em;
-    border: 2px solid #d2d2d2;
-}
-
-.Billets figure {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-    margin-bottom: 4em;
-    text-align: center;
-}
-
-.Billets figcaption {
-    border: 1px solid #efefef;
-    background-color: #3a3a3a;
-    transition: transform .2s;
-    border: 1px solid #d2d2d2;
-}
-
-.Billets figcaption:hover {
-    border: 1px solid #efefef;
-    background-color: #202020;
-    transition: transform .2s;
-    border: 1px solid #d2d2d2;
-}
-
-
-/*---- Page Chapitres ----*/
-
-
-/*---- Page Livres ----*/
-
-#boutonGallerie {
-    margin-bottom: 10%;
-}
-
-.blocLivres:hover {
-    background-color: #202020;
-}
-
-
-/*---- Page Livres ----*/
-
-
-/*---- Page Biographie ----*/
-
-.blocBio {
-    width: 75%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    background-color: #3a3a3a;
-    border: 1px solid #d2d2d2;
-    margin-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: justify;
-}
-
-.blocBio:hover {
-    background-color: #202020;
-}
-
-
-/*---- Page Biographie ----*/
-
-.img-bio {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.img-bio:hover {
-    transform: scale(1.1);
-    transition: transform .2s;
-    border: 3px solid #d2d2d2;
-}
-
-#comments {
-    text-align: center;
-    border: 2px solid #ffffff;
-    background-color: #3a3a3a;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 80px;
-    width: 75%;
-}
-
-.comment {
-    text-align: center;
-    border: 5px solid #ffffff;
-    background-color: #191919;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 80px;
-    width: 75%;
-    border-radius: 10px;
-}
-
-.chapitres {
-    text-align: center;
-    background-color: #3a3a3a;
-    border: 2px solid #f1efed;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 80px;
-    width: 75%;
-}
-
-#Connexion {
-    height: 570px;
-}
 
 #Connexion,
 #Contact,
@@ -383,17 +233,6 @@ label {
     color: white;
 }
 
-.blocLivres {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    background-color: #3a3a3a;
-    border: 1px solid #d2d2d2;
-    margin-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 .row {
     min-height: 550px;
 }
@@ -401,6 +240,11 @@ label {
 .form-box {
     margin-bottom: 5em;
     color: white;
+}
+
+.galerie,
+.chapitre {
+    margin-bottom: 10px;
 }
 
 .reseauxSociaux {
@@ -476,22 +320,196 @@ label {
     border-color: #ff0147;
 }
 
-.galerie,
-.chapitre {
-    margin-bottom: 10px;
+
+/*---- Page Accueil ----*/
+
+#msgSession {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 55vh;
+    font-size: 2vw;
+    color: white;
 }
+
+#Accueil {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10em;
+}
+
+
+/*---- Page Accueil ----*/
+
+
+/*---- Page Chapitres ----*/
+
+.Billets img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+    margin-bottom: 4em;
+    border: 2px solid #d2d2d2;
+}
+
+.Billets figure {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    margin-bottom: 4em;
+    text-align: center;
+}
+
+.Billets figcaption {
+    border: 1px solid #efefef;
+    background-color: #3a3a3a;
+    transition: transform .2s;
+    border: 1px solid #d2d2d2;
+}
+
+.Billets figcaption:hover {
+    border: 1px solid #efefef;
+    background-color: #202020;
+    transition: transform .2s;
+    border: 1px solid #d2d2d2;
+}
+
+.chapitres {
+    text-align: center;
+    background-color: #3a3a3a;
+    border: 2px solid #f1efed;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    width: 75%;
+}
+
+
+/*---- Page Chapitres ----*/
+
+
+/*---- Page Chapitre ----*/
+
+#comments {
+    text-align: center;
+    border: 2px solid #ffffff;
+    background-color: #3a3a3a;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    width: 75%;
+}
+
+.comment {
+    text-align: center;
+    border: 5px solid #ffffff;
+    background-color: #191919;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    width: 75%;
+    border-radius: 10px;
+}
+
+#commBtn {
+    display: none;
+}
+
+
+/*---- Page Chapitre ----*/
+
+
+/*---- Page Livres ----*/
+
+.blocLivres {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    background-color: #3a3a3a;
+    border: 1px solid #d2d2d2;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#boutonGallerie {
+    margin-bottom: 10%;
+}
+
+.blocLivres:hover {
+    background-color: #202020;
+}
+
+
+/*---- Page Livres ----*/
+
+
+/*---- Page Biographie ----*/
+
+.blocBio {
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    background-color: #3a3a3a;
+    border: 1px solid #d2d2d2;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+}
+
+.blocBio:hover {
+    background-color: #202020;
+}
+
+.img-bio {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-bio:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
+    border: 3px solid #d2d2d2;
+}
+
+
+/*---- Page Biographie ----*/
+
+
+/*---- Page Contact ----*/
 
 #message {
     height: 350px !important;
     ;
 }
 
-table {
-    margin: 0 auto;
+
+/*---- Page Contact ----*/
+
+
+/*---- Page Login ----*/
+
+#Connexion {
+    height: 570px;
 }
 
 
-/* Default Table Style */
+/*---- Page Login ----*/
+
+
+/*---- Page Administration ----*/
+
+table {
+    margin: 0 auto;
+}
 
 table {
     color: #333;
@@ -519,10 +537,6 @@ table td {
 
 tr:hover {
     background-color: #202020;
-}
-
-#commBtn {
-    display: none;
 }
 
 
@@ -562,13 +576,23 @@ tr:hover {
     border: 1px solid grey;
 }
 
-@media screen and (max-width: 425px) {
-    .wide {}
-    .Billets img {
-        width: 15em;
-    }
-    #Livres,
-    #Contact,
-    #Bio {}
-    footer {}
+
+/*---- Page Administration ----*/
+
+
+/*---- Page Nouveau Chapitre ----*/
+
+#nouveauChapitre {
+    margin-top: 40px;
 }
+
+
+/*---- Page Nouveau Chapitre ----*/
+
+
+/*---- Responsive ----*/
+
+@media screen and (max-width: 425px) {}
+
+
+/*---- Responsive ----*/
