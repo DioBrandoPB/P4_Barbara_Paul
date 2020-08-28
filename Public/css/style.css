@@ -1,3 +1,5 @@
+/*---- En Commun ----*/
+
 body {
     margin: 0;
     padding: 0;
@@ -49,12 +51,6 @@ h4 {
 
 img {
     width: 10vw;
-}
-
-#nouveauChapitre {
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
 }
 
 .form-group {
@@ -164,9 +160,6 @@ hr {
     padding: 55px 0px;
     text-align: center;
 }
-
-
-/*---- En Commun ----*/
 
 .container-fluid {
     text-align: center;
@@ -584,6 +577,9 @@ tr:hover {
 
 #nouveauChapitre {
     margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
 }
 
 
