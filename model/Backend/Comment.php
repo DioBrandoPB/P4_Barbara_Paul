@@ -105,4 +105,19 @@ class Comment
     {
         $this->signalé = $signalé;
     }
+            /**
+     * @return bool
+     */
+    public function validation()
+    {
+        return $this->validé;
+    }
+
+    /**
+     * @param bool $validé
+     */
+    public function validationFaite($validé)
+    {
+        $this->validé = $validé;
+    }
 }

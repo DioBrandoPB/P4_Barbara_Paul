@@ -15,6 +15,7 @@ class CommentDAO extends DAO
         $comment->setContent($row['content']);
         $comment->setCreatedAt($row['createdAt']);
         $comment->signalementFait($row['signalé']);
+        $comment->validationFaite($row['validé']);
         return $comment;
     }
 
@@ -58,21 +59,20 @@ class CommentDAO extends DAO
         $sql = 'DELETE FROM comment WHERE id = ?';
         $this->createQuery($sql, [$commentId]);
     }
-    public function getFlagComments()
-    {
-        $sql = 'SELECT id, pseudo, content, createdAt, flag FROM comment WHERE flag = ? ORDER BY createdAt DESC';
-        $result = $this->createQuery($sql, [1]);
-        $comments = [];
-        foreach ($result as $row) {
-            $commentId = $row['id'];
-            $comments[$commentId] = $this->buildObject($row);
-        }
-        $result->closeCursor();
-        return $comments;
-    }
+    
     public function unflagComment($commentId)
     {
-        $sql = 'UPDATE comment SET flag = ? WHERE id = ?';
+        $sql = 'UPDATE comment SET signalé = ? WHERE id = ?';
+        $this->createQuery($sql, [0, $commentId]);
+    }
+    public function validéCommentaire($commentId)
+    {
+        $sql = 'UPDATE comment SET validé = ? WHERE id = ?';
+        $this->createQuery($sql, [1, $commentId]);
+    }
+    public function invalidéCommentaire($commentId)
+    {
+        $sql = 'UPDATE comment SET validé = ? WHERE id = ?';
         $this->createQuery($sql, [0, $commentId]);
     }
 }
