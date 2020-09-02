@@ -12,20 +12,9 @@ class BackController extends Controller
     protected $view;
     protected $chapitreDAO;
     protected $commentDAO;
+    protected $usersDAO;
 
-public function administration()
-    {
 
-        $comments = $this->commentDAO->getFlagComments();
-        return $this->view->render('administration', [
-
-            'comments' => $comments
-        ]);
-        $chapitres = $this->chapitreDAO->getArticles();
-        return $this->view->renderBack('chapitres', [
-            'chapitres' => $chapitres
-        ]);
-    }
 
     public function addArticle($post)
     {
@@ -48,9 +37,11 @@ public function administration()
     {
         $comments = $this->commentDAO->getComments();
         $chapitres = $this->chapitreDAO->getArticles();
+        $users = $this->userDAO->getUsers();
         return $this->view->renderBack('admin', [
             'comments' => $comments,
-            'chapitres' => $chapitres
+            'chapitres' => $chapitres,
+            'users' => $users
         ]);
         
     }
@@ -78,6 +69,6 @@ public function administration()
     {
         $this->commentDAO->unflagComment($commentId);
         $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
-        header('Location: index.php?route=administration');
+        header('Location: index.php?route=admin');
     }
 }

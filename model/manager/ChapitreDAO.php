@@ -17,6 +17,7 @@ class ChapitreDAO extends DAO
         $chapitre->setAuthor($row['author']);
         $chapitre->setImage($row['Images']);
         $chapitre->setCreatedAt($row['createdAt']);
+        $chapitre->setStatut($row['statut']);
         return $chapitre;
     }
 

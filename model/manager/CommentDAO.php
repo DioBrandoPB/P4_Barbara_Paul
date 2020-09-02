@@ -5,6 +5,7 @@ namespace App\model\manager;
 use App\model\Backend\Comment;
 
 use App\model\Parameter;
+
 class CommentDAO extends DAO
 {
     private function buildObject($row)
@@ -36,7 +37,7 @@ class CommentDAO extends DAO
         $sql = 'SELECT * FROM comment ORDER BY id DESC';
         $result = $this->createQuery($sql);
         $comments = [];
-        foreach ($result as $row){
+        foreach ($result as $row) {
             $commentsId = $row['id'];
             $comments[$commentsId] = $this->buildObject($row);
         }
@@ -59,7 +60,7 @@ class CommentDAO extends DAO
         $sql = 'DELETE FROM comment WHERE id = ?';
         $this->createQuery($sql, [$commentId]);
     }
-    
+
     public function unflagComment($commentId)
     {
         $sql = 'UPDATE comment SET signalé = ? WHERE id = ?';

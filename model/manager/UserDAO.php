@@ -1,17 +1,39 @@
 <?php
 
 namespace App\model\manager;
-
+use App\model\Backend\user;
 use App\model\Parameter;
 
 class UserDAO extends DAO
 {
-    
+    private function buildObject($row)
+    {
+        $user = new User();
+        $user->setId($row['id']);
+        $user->setPseudo($row['pseudo']);
+        $user->setCreatedAt($row['createdAt']);
+        $user->setMail($row['mail']);
+        $user->setRole($row['name']);
+        return $user;
+    }
+
+    public function getUsers()
+    {
+        $sql = 'SELECT user.id, user.pseudo, user.createdAt,user.mail, role.name FROM user INNER JOIN role ON user.role_id = role.id ORDER BY user.id DESC';
+        $result = $this->createQuery($sql);
+        $users = [];
+        foreach ($result as $row){
+            $userId = $row['id'];
+            $users[$userId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $users;
+    }
     public function register(Parameter $post)
     {
         $this->checkUser($post);
-        $sql = 'INSERT INTO user (pseudo, password, createdAt, role_id) VALUES (?, ?, NOW(), ?)';
-        $this->createQuery($sql, [$post->get('pseudo'), password_hash($post->get('password'), PASSWORD_BCRYPT), 2]);
+        $sql = 'INSERT INTO user (pseudo, password, createdAt, mail, role_id ) VALUES (?, ?, NOW(), ?, ?)';
+        $this->createQuery($sql, [$post->get('pseudo'), password_hash($post->get('password'), PASSWORD_BCRYPT),$post->get('mail'), 2]);
     }
     public function checkUser(Parameter $post)
     {
@@ -37,5 +59,10 @@ class UserDAO extends DAO
     {
         $sql = 'UPDATE user SET password = ? WHERE pseudo = ?';
         $this->createQuery($sql, [password_hash($post->get('password'), PASSWORD_BCRYPT), $pseudo]);
+    }
+    public function deleteAccount($pseudo)
+    {
+        $sql = 'DELETE FROM user WHERE pseudo = ?';
+        $this->createQuery($sql, [$pseudo]);
     }
 }

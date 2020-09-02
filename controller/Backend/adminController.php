@@ -23,7 +23,8 @@ class adminController extends Controller
     {
         $comments = $this->commentDAO->getComments();
         return $this->view->renderBack('admin', [
-            'comments' => $comments
+            'comments' => $comments,
+            
         ]);
     }
 }
