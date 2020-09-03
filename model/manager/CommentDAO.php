@@ -20,7 +20,7 @@ class CommentDAO extends DAO
         return $comment;
     }
 
-    public function getCommentsFromArticle($chapitreId)
+    public function recupCommChapitres($chapitreId)
     {
         $sql = 'SELECT id, pseudo, content, createdAt, signalé FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
         $result = $this->createQuery($sql, [$chapitreId]);
@@ -32,7 +32,7 @@ class CommentDAO extends DAO
         $result->closeCursor();
         return $comments;
     }
-    public function getComments()
+    public function recupCommAdmin()
     {
         $sql = 'SELECT * FROM comment ORDER BY id DESC';
         $result = $this->createQuery($sql);
@@ -50,18 +50,18 @@ class CommentDAO extends DAO
         $sql = 'UPDATE comment SET signalé = ? WHERE id = ?';
         $this->createQuery($sql, [1, $commentId]);
     }
-    public function addComment(Parameter $post, $chapitreId)
+    public function ajoutComm(Parameter $post, $chapitreId)
     {
         $sql = 'INSERT INTO comment (pseudo, content, createdAt, article_id) VALUES (?, ?, NOW(), ?)';
         $this->createQuery($sql, [$post->get('pseudo'), $post->get('content'), $chapitreId]);
     }
-    public function deleteComment($commentId)
+    public function supprimerComm($commentId)
     {
         $sql = 'DELETE FROM comment WHERE id = ?';
         $this->createQuery($sql, [$commentId]);
     }
 
-    public function unflagComment($commentId)
+    public function designalerComm($commentId)
     {
         $sql = 'UPDATE comment SET signalé = ? WHERE id = ?';
         $this->createQuery($sql, [0, $commentId]);

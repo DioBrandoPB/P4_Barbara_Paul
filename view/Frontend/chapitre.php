@@ -3,9 +3,9 @@
 
 <div class="chapitres">
 
-    <h2>Chapitre <?= htmlspecialchars($chapitre->getId());?>:<br><br><?= htmlspecialchars($chapitre->getTitle());?></h2>
-    <img src='https://projet4.paul-barbara.eu/img/<?= htmlspecialchars($chapitre->getImages()); ?>.png' alt="image chapitre numéro <?= htmlspecialchars($chapitre->getId()); ?>">
-    <p><?= htmlspecialchars($chapitre->getContent());?></p>
+    <h2><?= htmlspecialchars($chapitre->getTitle());?></h2>
+    <img src='https://projet4.paul-barbara.eu/img/<?= htmlspecialchars($chapitre->getImages()); ?><?= htmlspecialchars($chapitre->getId()); ?>.png' alt="image chapitre numéro <?= htmlspecialchars($chapitre->getId()); ?>">
+    <p><?= ($chapitre->getContent());?></p>
     <p><?= htmlspecialchars($chapitre->getAuthor());?></p>
     <p>Créé le : <?= date_format(date_create($chapitre->getCreatedAt()), 'd/m/Y');?></p>
     <a href="index.php?route=chapitres">Retour à la liste des chapitres</a>
@@ -43,4 +43,4 @@
         <?php
     }
     ?>
-</div></div>
+</div></div></div>

@@ -14,9 +14,14 @@ class commentController extends Controller
         $this->commentDAO->signalCommentaire($commentId);
         header('Location: ../../index.php');
     }
-    public function deleteComment($commentId)
+    public function validéCommentaire($commentId)
     {
-        $this->commentDAO->deleteComment($commentId);
+        $this->commentDAO->validéCommentaire($commentId);
+        header('Location: ../../index.php');
+    }
+    public function supprimerComm($commentId)
+    {
+        $this->commentDAO->supprimerComm($commentId);
         $this->session->set('delete_comment', 'Le commentaire a bien été supprimé');
         header('Location: index.php');
     }

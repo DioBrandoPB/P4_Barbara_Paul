@@ -141,4 +141,18 @@ class chapitre
         $this->createdAt = $createdAt;
     }
     
+    /**
+     * @param bool $statut
+     */
+    public function setStatut($statut)
+    {
+        $this->statut = $statut;
+    }
+            /**
+     * @return bool
+     */
+    public function getStatut()
+    {
+        return $this->statut;
+    }
 }

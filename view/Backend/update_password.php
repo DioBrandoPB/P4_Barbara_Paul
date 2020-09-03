@@ -4,7 +4,7 @@
 
 
 
-        <form method="post" action="index.php?route=updatePassword">
+        <form method="post" action="index.php?route=majMDP">
             <br><label for="password">Mot de passe</label><br>
             <input type="password" id="password" name="password"><br>
             <label for="confpassword">Confirmation</label><br>

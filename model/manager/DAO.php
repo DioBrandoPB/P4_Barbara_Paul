@@ -10,18 +10,18 @@ abstract class DAO
 
     private $connection;
 
-    private function checkConnection()
+    private function verifConnection()
     {
-        //Vérifie si la connexion est nulle et fait appel à getConnection()
+        //Vérifie si la connexion est nulle et fait appel à recupConnection()
         if($this->connection === null) {
-            return $this->getConnection();
+            return $this->recupConnection();
         }
         //Si la connexion existe, elle est renvoyée, inutile de refaire une connexion
         return $this->connection;
     }
 
     //Méthode de connexion à notre base de données
-    private function getConnection()
+    private function recupConnection()
     {
         //Tentative de connexion à la base de données
         try{
@@ -42,11 +42,11 @@ abstract class DAO
     {
         if($parameters)
         {
-            $result = $this->checkConnection()->prepare($sql);
+            $result = $this->verifConnection()->prepare($sql);
             $result->execute($parameters);
             return $result;
         }
-        $result = $this->checkConnection()->query($sql);
+        $result = $this->verifConnection()->query($sql);
         return $result;
     }
 }

@@ -12,9 +12,8 @@
             <figure>
                 <figcaption>
                     <h2><?= htmlspecialchars($chapitre->getTitle()); ?></h2>
-                    <a href="index.php?route=chapitre&chapitreId=<?= htmlspecialchars($chapitre->getId()); ?>">
-                        <img src='https://projet4.paul-barbara.eu/img/<?= htmlspecialchars($chapitre->getImages()); ?>.png'></a>
-                    <p><?= htmlspecialchars($chapitre->getExtrait()); ?></p>
+                        <img src='https://projet4.paul-barbara.eu/img/<?= htmlspecialchars($chapitre->getTitle()); ?>.png'></a>
+                    <p><?= substr(($chapitre->getContent()), 0, 400); ?>...</p>
                     <p>de <?= htmlspecialchars($chapitre->getAuthor()); ?></p>
                     <p>Créé le : <?= date_format(date_create($chapitre->getCreatedAt()), 'd/m/Y'); ?></p>
 

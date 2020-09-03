@@ -21,10 +21,9 @@ class adminController extends Controller
     }
     public function comments()
     {
-        $comments = $this->commentDAO->getComments();
+        $comments = $this->commentDAO->recupCommAdmin();
         return $this->view->renderBack('admin', [
-            'comments' => $comments,
-            
+            'comments' => $comments
         ]);
     }
 }

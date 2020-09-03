@@ -41,8 +41,9 @@
                                     
                                     <?php if ($this->session->get('role') === 'admin') { ?>
                                         <a href="index.php?route=admin">Administration</a>
+                                        <a href="index.php?route=ajouterChapitre">Nouveau Chapitre</a>
                                     <?php } ?>
-                                    <a href="index.php?route=addArticle">Nouveau Chapitre</a>
+                                    
                                     <a href="index.php?route=logout">Déconnexion</a>
                                 <?php
                                 } else {

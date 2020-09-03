@@ -41,8 +41,9 @@
                                     
                                     <?php if ($this->session->get('role') === 'admin') { ?>
                                         <a href="index.php?route=admin">Administration</a>
+                                        <a href="index.php?route=ajouterChapitre">Nouveau Chapitre</a>
                                     <?php } ?>
-                                    <a href="index.php?route=addArticle">Nouveau Chapitre</a>
+                                    
                                     <a href="index.php?route=logout">Déconnexion</a>
                                 <?php
                                 } else {
@@ -92,7 +93,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
     <script src="js/galerie.js"></script>
     <script src="js/validation.js"></script>
-
+    <script src="js/adminTrad.js"></script>
 </body>
 
 </html>

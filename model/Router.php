@@ -1,6 +1,7 @@
 <?php
 
 namespace App\model;
+
 use App\controller\Frontend\accueilController;
 use App\controller\Frontend\chapitreController;
 use App\controller\Frontend\commentController;
@@ -43,74 +44,61 @@ class Router
     public function run()
     {
         $route = $this->request->getGet()->get('route');
-        try{
-            if(isset($_GET['route']))
-            {
-                if($route === 'accueil'){
+        try {
+            if (isset($_GET['route'])) {
+                if ($route === 'accueil') {
                     $this->accueilController->index();
-
-                }
-                elseif($route === 'chapitre'){
+                } elseif ($route === 'chapitre') {
                     $this->chapitreController->chapitre($this->request->getGet()->get('chapitreId'));
-                }
-                elseif($route === 'chapitres'){
+                } elseif ($route === 'chapitres') {
                     $this->chapitreController->chapitres();
-                }
-                elseif($route === 'addArticle'){
-                    $this->backController->addArticle($_POST);
-                }
-                elseif($route === 'biographie'){
+                } elseif ($route === 'ajouterChapitre') {
+                    $this->backController->ajouterChapitre($_POST);
+                } elseif($route === 'deleteChapitre'){
+                    $this->backController->supprimerChapitre($this->request->getGet()->get('chapitreId'));
+                } elseif ($route === 'biographie') {
                     $this->bioController->biographie();
-                }
-                elseif($route === 'livres'){
+                } elseif ($route === 'livres') {
                     $this->livresController->livres();
-                }
-                elseif($route === 'contact'){
+                } elseif ($route === 'contact') {
                     $this->contactController->contact();
-                }
-                elseif($route === 'admin'){
+                } elseif ($route === 'admin') {
                     $this->backController->comments();
-                }
-                elseif($route === 'addComment'){
-                    $this->chapitreController->addComment($this->request->getPost(), $this->request->getGet()->get('chapitreId'));
-                }
-                elseif($route === 'signalCommentaire'){
+                } elseif ($route === 'ajoutComm') {
+                    $this->chapitreController->ajoutComm($this->request->getPost(), $this->request->getGet()->get('chapitreId'));
+                } elseif ($route === 'signalCommentaire') {
                     $this->commentController->signalCommentaire($_GET['commentId']);
-                }
-                elseif($route === 'unflagComment'){
-                    $this->backController->unflagComment($this->request->getGet()->get('commentId'));
-                }
-                elseif($route === 'deleteComment'){
-                    $this->commentController->deleteComment($_GET['commentId']);
-                }
-                elseif($route === 'register'){
+                } elseif ($route === 'designalerComm') {
+                    $this->backController->designalerComm($_GET['commentId']);
+                } elseif ($route === 'modifierChapitre') {
+                    $this->backController->modifierChapitre($this->request->getPost(), $_GET['chapitreId']);
+                } elseif ($route === 'publierChapitre') {
+                    $this->backController->publierChapitre($_GET['chapitreId']);
+                } elseif ($route === 'brouillonnerChapitre') {
+                    $this->backController->brouillonnerChapitre($_GET['chapitreId']);
+                } elseif ($route === 'supprimerComm') {
+                    $this->commentController->supprimerComm($_GET['commentId']);
+                } elseif ($route === 'validéCommentaire') {
+                    $this->commentController->validéCommentaire($_GET['commentId']);
+                } elseif ($route === 'register') {
                     $this->userController->register($this->request->getPost());
-                }
-                elseif($route === 'login'){
+                } elseif ($route === 'login') {
                     $this->userController->login($this->request->getPost());
-                }
-                elseif($route === 'profile'){
+                } elseif ($route === 'profile') {
                     $this->backController->profile();
-                }
-                elseif($route === 'updatePassword'){
-                    $this->backController->updatePassword($this->request->getPost());
-                }
-                elseif($route === 'logout'){
+                } elseif ($route === 'majMDP') {
+                    $this->backController->majMDP($this->request->getPost());
+                } elseif ($route === 'logout') {
                     $this->backController->logout();
-                }
-                elseif($route === 'administration'){
-                    $this->backController->administration();
-                }
-                else{
+                } elseif ($route === 'deleteUser') {
+                    $this->backController->deleteUser($this->request->getGet()->get('userId'));
+                } else {
                     echo 'page inconnue';
                 }
-            }
-            else{
+            } else {
                 $this->accueilController->index();
             }
-        }
-        catch (Exception $e)
-        {
+        } catch (Exception $e) {
             echo 'Erreur';
         }
     }

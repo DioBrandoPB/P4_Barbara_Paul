@@ -11,7 +11,7 @@ class accueilController extends Controller
 
     public function index()
     {
-        $chapitres = $this->chapitreDAO->getLastArticles();
+        $chapitres = $this->chapitreDAO->recupDernierChapitrePublier();
         return $this->view->render('accueil', [
             'chapitres' => $chapitres
         ]);

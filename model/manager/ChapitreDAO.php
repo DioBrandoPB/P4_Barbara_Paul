@@ -3,7 +3,7 @@
 namespace App\model\manager;
 
 use App\model\Backend\chapitre;
-
+use App\model\Parameter;
 
 class ChapitreDAO extends DAO
 {
@@ -21,9 +21,21 @@ class ChapitreDAO extends DAO
         return $chapitre;
     }
 
-    public function getArticles()
+    public function recupChapitresPublier()
     {
-        $sql = 'SELECT * FROM chapitre ORDER BY id DESC';
+        $sql = 'SELECT * FROM chapitre WHERE statut = 0 ORDER BY id DESC ';
+        $result = $this->createQuery($sql);
+        $chapitres = [];
+        foreach ($result as $row){
+            $chapitreId = $row['id'];
+            $chapitres[$chapitreId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $chapitres;
+    }
+    public function recupToutChapitres()
+    {
+        $sql = 'SELECT * FROM chapitre ORDER BY id DESC ';
         $result = $this->createQuery($sql);
         $chapitres = [];
         foreach ($result as $row){
@@ -34,7 +46,7 @@ class ChapitreDAO extends DAO
         return $chapitres;
     }
 
-    public function getArticle($chapitreId)
+    public function recupChapitre($chapitreId)
     {
         $sql = 'SELECT * FROM chapitre WHERE id = ?';
         $result = $this->createQuery($sql, [$chapitreId]);
@@ -43,9 +55,9 @@ class ChapitreDAO extends DAO
         return $this->buildObject($chapitre);
     }
 
-    public function getLastArticles()
+    public function recupDernierChapitrePublier()
     {
-        $sql = 'SELECT * FROM chapitre ORDER BY id DESC LIMIT 0,1';
+        $sql = 'SELECT * FROM chapitre WHERE statut = 0 ORDER BY id DESC LIMIT 0,1';
         $result = $this->createQuery($sql);
         $chapitres = [];
         foreach ($result as $row){
@@ -57,12 +69,43 @@ class ChapitreDAO extends DAO
     
     }
     
-    public function addArticle($chapitre)
+    public function modifierChapitre(Parameter $post, $chapitreId)
+    {
+        $sql = 'UPDATE chapitre SET title=:title, content=:content WHERE id=:chapitreId';
+        $this->createQuery($sql, [
+            'title' => $post->get('title'),
+            'content' => $post->get('content'),
+            'chapitreId' => $chapitreId
+        ]);
+    }
+
+    public function supprimerChapitre($chapitreId)
+    {
+        $sql = 'DELETE FROM comment WHERE article_id = ?';
+        $this->createQuery($sql, [$chapitreId]);
+        $sql = 'DELETE FROM chapitre WHERE id = ?';
+        $this->createQuery($sql, [$chapitreId]);
+    }
+
+    public function ajouterChapitre($chapitre)
     {
         //Permet de récupérer les variables $title, $content et $author
         extract($chapitre);
-        $sql = 'INSERT INTO chapitre (title, content, author, createdAt) VALUES (?, ?, ?, NOW())';
+        $sql = 'INSERT INTO chapitre (title, content, author, createdAt, statut) VALUES (?, ?, ?, NOW(), 1)';
+        $author = "Jean Forteroche";
         $this->createQuery($sql, [$title, $content, $author]);
+    }
+    
+    public function publierChapitre($chapitreId)
+    {
+        $sql = 'UPDATE chapitre SET statut = ? WHERE id = ?';
+        $this->createQuery($sql, [0, $chapitreId]);
+    }
+
+    public function brouillonnerChapitre($chapitreId)
+    {
+        $sql = 'UPDATE chapitre SET statut = ? WHERE id = ?';
+        $this->createQuery($sql, [1, $chapitreId]);
     }
     
 }

@@ -61,8 +61,9 @@
 
             <figure>
                 <p>Dernier chapitre paru :</p>
-                <img src='https://projet4.paul-barbara.eu/img/<?= htmlspecialchars($chapitre->getImages()); ?>.png' alt="image chapitre numéro <?= htmlspecialchars($chapitre->getId()); ?>">
-                <p><?= htmlspecialchars($chapitre->getExtrait()); ?></p>
+                <h2><?= htmlspecialchars($chapitre->getTitle()); ?></h2>
+                <img src='https://projet4.paul-barbara.eu/img/<?= htmlspecialchars($chapitre->getTitle()); ?>.png' alt="image chapitre numéro <?= htmlspecialchars($chapitre->getId()); ?>">
+                <p><?= substr(($chapitre->getContent()), 0, 400); ?>...</p>
                 <a class="btn btn-primary" href="index.php?route=chapitre&chapitreId=<?= htmlspecialchars($chapitre->getId()); ?>">
                     Lire Plus</a>
                 <p>de <?= htmlspecialchars($chapitre->getAuthor()); ?></p>

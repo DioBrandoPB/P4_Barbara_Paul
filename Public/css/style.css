@@ -11,9 +11,10 @@ body {
 }
 
 p {
-    margin: 0 0 10px;
+    margin: 0 15px 10px;
     font-weight: 500;
     color: white;
+    line-height: 2.5;
 }
 
 input {
@@ -22,16 +23,16 @@ input {
 
 h1 {
     text-align: center;
-    color: #ffffff;
+    color: #ffffff!important;
     font-size: 2vw;
     font-weight: 800;
 }
 
 h2 {
     text-align: center;
-    color: #bc81e0;
+    color: #bc81e0!important;
     margin: 25px 0px 72px;
-    font-size: 21px;
+    font-size: 28px;
     margin-left: auto;
     margin-right: auto;
     width: 35%;
@@ -39,14 +40,14 @@ h2 {
 
 h3 {
     text-align: center;
-    color: #bc81e0;
+    color: #bc81e0!important;
     margin-bottom: 4em;
 }
 
 h4 {
     text-align: center;
     font-size: 1vw;
-    color: white;
+    color: white!important;
 }
 
 img {
@@ -334,11 +335,19 @@ label {
     margin-bottom: 10em;
 }
 
+#Accueil p {
+    text-align: center;
+}
+
 
 /*---- Page Accueil ----*/
 
 
 /*---- Page Chapitres ----*/
+
+.Billets p {
+    text-align: center!important;
+}
 
 .Billets img {
     display: block;
@@ -385,6 +394,13 @@ label {
 
 /*---- Page Chapitres ----*/
 
+.Chapitres h1,
+h2,
+h3,
+h4 {
+    color: white;
+}
+
 
 /*---- Page Chapitre ----*/
 
@@ -395,6 +411,7 @@ label {
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
+    margin-bottom: 3em;
     width: 75%;
 }
 
@@ -405,6 +422,7 @@ label {
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
+    margin-bottom: 3em;
     width: 75%;
     border-radius: 10px;
 }
@@ -500,6 +518,12 @@ label {
 
 /*---- Page Administration ----*/
 
+#admin p,
+h3,
+h4 {
+    color: black;
+}
+
 table {
     margin: 0 auto;
 }
@@ -510,6 +534,7 @@ table {
     border: 1px solid grey;
     font-size: 12pt;
     border-collapse: collapse;
+    margin-bottom: 30px;
 }
 
 table thead th,
@@ -529,7 +554,11 @@ table td {
 }
 
 tr:hover {
-    background-color: #202020;
+    background-color: #bdbdbd;
+}
+
+td:hover {
+    background-color: white;
 }
 
 

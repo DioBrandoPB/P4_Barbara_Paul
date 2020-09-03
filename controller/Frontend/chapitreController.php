@@ -9,7 +9,7 @@ class chapitreController extends Controller
 
     public function chapitres()
     {
-        $chapitres = $this->chapitreDAO->getArticles();
+        $chapitres = $this->chapitreDAO->recupChapitresPublier();
         return $this->view->render('chapitres', [
             'chapitres' => $chapitres
         ]);
@@ -20,17 +20,17 @@ class chapitreController extends Controller
 
     public function chapitre($chapitreId)
     {
-        $chapitre = $this->chapitreDAO->getArticle($chapitreId);
-        $comments = $this->commentDAO->getCommentsFromArticle($chapitreId);
+        $chapitre = $this->chapitreDAO->recupChapitre($chapitreId);
+        $comments = $this->commentDAO->recupCommChapitres($chapitreId);
         return $this->view->render('chapitre', [
             'chapitre' => $chapitre,
             'comments' => $comments
         ]);
     }
-    public function addComment(Parameter $post, $chapitreId)
+    public function ajoutComm(Parameter $post, $chapitreId)
     {
         if($post->get('submit')) {
-            $this->commentDAO->addComment($post, $chapitreId);
+            $this->commentDAO->ajoutComm($post, $chapitreId);
 
             header('Location: index.php?route=chapitre&chapitreId='.$chapitreId);
         }

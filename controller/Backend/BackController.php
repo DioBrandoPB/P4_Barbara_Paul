@@ -16,28 +16,43 @@ class BackController extends Controller
 
 
 
-    public function addArticle($post)
+    public function ajouterChapitre($post)
     {
         if(isset($post['submit'])) {
             $ChapitreDAO = new ChapitreDAO();
-            $ChapitreDAO->addArticle($post);
+            $ChapitreDAO->ajouterChapitre($post);
             header('Location: index.php?route=chapitres');
         }
         return $this->view->renderBack('add_article', [
             'post' => $post
         ]);
     }
-    public function deleteComment($commentId)
+    public function modifierChapitre(Parameter $post, $chapitreId)
     {
-        $this->commentDAO->deleteComment($commentId);
+        $chapitre = $this->chapitreDAO->recupChapitre($chapitreId);
+        if($post->get('submit')) {
+
+            $this->chapitreDAO->modifierChapitre($post, $chapitreId);
+            $this->session->set('edit_article', 'L\' article a bien été modifié');
+            header('Location: index.php?route=admin');
+        }
+        return $this->view->renderBack('edit_article', [
+            'chapitre' => $chapitre
+        ]);
+    }
+
+    
+    public function supprimerComm($commentId)
+    {
+        $this->commentDAO->supprimerComm($commentId);
         $this->session->set('delete_comment', 'Le commentaire a bien été supprimé');
         header('Location: index.php');
     }
     public function comments()
     {
-        $comments = $this->commentDAO->getComments();
-        $chapitres = $this->chapitreDAO->getArticles();
-        $users = $this->userDAO->getUsers();
+        $comments = $this->commentDAO->recupCommAdmin();
+        $chapitres = $this->chapitreDAO->recupToutChapitres();
+        $users = $this->userDAO->recupUtilisateurs();
         return $this->view->renderBack('admin', [
             'comments' => $comments,
             'chapitres' => $chapitres,
@@ -49,10 +64,10 @@ class BackController extends Controller
     {
         return $this->view->renderBack('profile');
     }
-    public function updatePassword(Parameter $post)
+    public function majMDP(Parameter $post)
     {
         if($post->get('submit')) {
-            $this->userDAO->updatePassword($post, $this->session->get('pseudo'));
+            $this->userDAO->majMDP($post, $this->session->get('pseudo'));
             $this->session->set('update_password', 'Le mot de passe a été mis à jour');
             header('Location: index.php?route=profile');
         }
@@ -65,10 +80,34 @@ class BackController extends Controller
         $this->session->set('logout', 'À bientôt');
         header('Location: index.php');
     }
-    public function unflagComment($commentId)
+    public function designalerComm($commentId)
     {
-        $this->commentDAO->unflagComment($commentId);
+        $this->commentDAO->designalerComm($commentId);
         $this->session->set('unflag_comment', 'Le commentaire a bien été désignalé');
+        header('Location: index.php?route=admin');
+    }
+    public function publierChapitre($chapitreId)
+    {
+        $this->chapitreDAO->publierChapitre($chapitreId);
+        $this->session->set('publierChapitre', 'Le chapitre a bien été publié');
+        header('Location: index.php?route=admin');
+    }
+    public function brouillonnerChapitre($chapitreId)
+    {
+        $this->chapitreDAO->brouillonnerChapitre($chapitreId);
+        $this->session->set('brouillonnerChapitre', 'Le chapitre a été définit comme brouillon');
+        header('Location: index.php?route=admin');
+    }
+    public function deleteUser($userId)
+    {
+        $this->userDAO->deleteUser($userId);
+        $this->session->set('delete_user', 'L\'utilisateur a bien été supprimé');
+        header('Location: index.php?route=admin');
+    }
+    public function supprimerChapitre($chapitreId)
+    {
+        $this->chapitreDAO->supprimerChapitre($chapitreId);
+        $this->session->set('delete_article', 'L\' article a bien été supprimé');
         header('Location: index.php?route=admin');
     }
 }
