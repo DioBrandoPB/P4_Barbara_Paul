@@ -130,6 +130,31 @@
                 ?>
             </table>
         </div>
+        <div class="container-fluid">
+            <h2>Messages</h2>
+            <table>
+                <tr>
+                    <td>Nom</td>
+                    <td>Mail</td>
+                    <td>Message</td>
+                    <td>Sujet</td>
+                    <td>Répondre</td>
+                </tr>
+                <?php
+                foreach ($contacts as $contact) {
+                ?>
+                    <tr>
+                        <td><?= htmlspecialchars($contact->getNom()); ?></td>
+                        <td><?= htmlspecialchars($contact->getMail()); ?></td>
+                        <td><?= htmlspecialchars($contact->getMessage()); ?></td>
+                        <td><?= htmlspecialchars($contact->getSujet()); ?></td>
+                        <td><a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=<?= htmlspecialchars($contact->getMail()); ?>&su=JeanForteroche&body=body_here">répondre</a></td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
+        </div>
     <?php
     } else { ?>
 

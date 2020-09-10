@@ -2,10 +2,9 @@
 
 namespace App\controller\Backend;
 
-use App\controller\Frontend\Controller;
+use App\controller\Controller;
 use App\model\manager\ChapitreDAO;
-use App\model\manager\View;
-use App\model\Session;
+use App\model\manager\ContactDAO;
 use App\model\Parameter;
 class BackController extends Controller
 {
@@ -13,7 +12,7 @@ class BackController extends Controller
     protected $chapitreDAO;
     protected $commentDAO;
     protected $usersDAO;
-
+    protected $ContactDAO;
 
 
     public function ajouterChapitre($post)
@@ -27,6 +26,20 @@ class BackController extends Controller
             'post' => $post
         ]);
     }
+
+    public function ajoutMessage($post)
+    {
+        if($post->get('submit')) {
+            $ContactDAO = new ContactDAO();
+            $this->ContactDAO->ajoutMessage($post);
+            $this->session->set('envoyer_message', 'Votre message a été transmis a Jean Forteroche');
+            header('Location: index.php?route=accueil');
+        }
+        return $this->view->render('contact', [
+            'post' => $post
+        ]);
+    }
+    
     public function modifierChapitre(Parameter $post, $chapitreId)
     {
         $chapitre = $this->chapitreDAO->recupChapitre($chapitreId);
@@ -53,10 +66,12 @@ class BackController extends Controller
         $comments = $this->commentDAO->recupCommAdmin();
         $chapitres = $this->chapitreDAO->recupToutChapitres();
         $users = $this->userDAO->recupUtilisateurs();
+        $contacts = $this->ContactDAO->recupMessage();
         return $this->view->renderBack('admin', [
             'comments' => $comments,
             'chapitres' => $chapitres,
-            'users' => $users
+            'users' => $users,
+            'contacts' => $contacts
         ]);
         
     }
@@ -64,6 +79,7 @@ class BackController extends Controller
     {
         return $this->view->renderBack('profile');
     }
+
     public function majMDP(Parameter $post)
     {
         if($post->get('submit')) {

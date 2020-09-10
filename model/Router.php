@@ -9,8 +9,8 @@ use App\controller\Frontend\bioController;
 use App\controller\Frontend\livresController;
 use App\controller\Frontend\contactController;
 use App\controller\Backend\BackController;
-use App\controller\Backend\adminController;
 use App\controller\Frontend\userController;
+use App\model\Parameter;
 use App\model\Request;
 use Exception;
 
@@ -37,7 +37,6 @@ class Router
         $this->livresController = new livresController();
         $this->contactController = new contactController();
         $this->userController = new userController();
-        $this->adminController = new adminController();
         $this->request = new Request();
     }
 
@@ -54,7 +53,7 @@ class Router
                     $this->chapitreController->chapitres();
                 } elseif ($route === 'ajouterChapitre') {
                     $this->backController->ajouterChapitre($_POST);
-                } elseif($route === 'deleteChapitre'){
+                } elseif ($route === 'deleteChapitre') {
                     $this->backController->supprimerChapitre($this->request->getGet()->get('chapitreId'));
                 } elseif ($route === 'biographie') {
                     $this->bioController->biographie();
@@ -62,8 +61,12 @@ class Router
                     $this->livresController->livres();
                 } elseif ($route === 'contact') {
                     $this->contactController->contact();
+                } elseif ($route === 'ajoutMessage') {
+                    $this->backController->ajoutMessage($this->request->getPost());
                 } elseif ($route === 'admin') {
                     $this->backController->comments();
+                } elseif ($route === 'upload') {
+                    $this->backController->upload();
                 } elseif ($route === 'ajoutComm') {
                     $this->chapitreController->ajoutComm($this->request->getPost(), $this->request->getGet()->get('chapitreId'));
                 } elseif ($route === 'signalCommentaire') {

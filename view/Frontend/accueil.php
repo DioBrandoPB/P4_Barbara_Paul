@@ -10,6 +10,7 @@
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('register'); ?>
 <?= $this->session->show('login'); ?>
+<?= $this->session->show('envoyer_message'); ?>
 </div>
 <section id="Accueil">
 
@@ -62,7 +63,6 @@
             <figure>
                 <p>Dernier chapitre paru :</p>
                 <h2><?= htmlspecialchars($chapitre->getTitle()); ?></h2>
-                <img src='https://projet4.paul-barbara.eu/img/<?= htmlspecialchars($chapitre->getTitle()); ?>.png' alt="image chapitre numéro <?= htmlspecialchars($chapitre->getId()); ?>">
                 <p><?= substr(($chapitre->getContent()), 0, 400); ?>...</p>
                 <a class="btn btn-primary" href="index.php?route=chapitre&chapitreId=<?= htmlspecialchars($chapitre->getId()); ?>">
                     Lire Plus</a>

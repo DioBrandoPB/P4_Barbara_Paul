@@ -4,7 +4,6 @@
 <div class="chapitres">
 
     <h2><?= htmlspecialchars($chapitre->getTitle());?></h2>
-    <img src='https://projet4.paul-barbara.eu/img/<?= htmlspecialchars($chapitre->getImages()); ?><?= htmlspecialchars($chapitre->getId()); ?>.png' alt="image chapitre numéro <?= htmlspecialchars($chapitre->getId()); ?>">
     <p><?= ($chapitre->getContent());?></p>
     <p><?= htmlspecialchars($chapitre->getAuthor());?></p>
     <p>Créé le : <?= date_format(date_create($chapitre->getCreatedAt()), 'd/m/Y');?></p>

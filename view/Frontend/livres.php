@@ -4,11 +4,11 @@
         <div class="row">
         <div id="boutonGallerie" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h2>Mes Romans :</h2>
-            <button class="btn btn-default filter-button" data-filter="all">Tous</button>
-            <button class="btn btn-default filter-button" data-filter="Fantastique">Fantastique</button>
-            <button class="btn btn-default filter-button" data-filter="Policier">Policier</button>
-            <button class="btn btn-default filter-button" data-filter="Thriller">Thriller</button>
-            <button class="btn btn-default filter-button" data-filter="Romance">Romance</button>
+            <button class="btn btn-primary filter-button" data-filter="all">Tous</button>
+            <button class="btn btn-primary filter-button" data-filter="Fantastique">Fantastique</button>
+            <button class="btn btn-primary filter-button" data-filter="Policier">Policier</button>
+            <button class="btn btn-primary filter-button" data-filter="Thriller">Thriller</button>
+            <button class="btn btn-primary filter-button" data-filter="Romance">Romance</button>
             <br/>
         </div>
 

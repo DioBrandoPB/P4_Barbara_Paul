@@ -1,30 +1,29 @@
 <?php $this->title = "Contact"; ?>
 
+<div id="msgSession">
+
+
+
+</div>
 <section id="Contact">
         <div class="container-fluid">
             <div class="form-box">
                 <h2>Posez moi vos questions</h2>
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input class="form-control" id="name" type="text" name="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input class="form-control" id="email" type="email" name="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Sujet</label>
-                        <input class="form-control" id="subject" type="text" name="Sujet">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" name="Message"></textarea>
-                    </div>
-                    <div class="form-group">
-                                <label><input id="check_1" name="check_1"  type="checkbox" required><small> Vous acceptez nos règles de confidentialité et conditions d'utilisation.</small> </label>
-                            </div>
-                    <input class="btn btn-primary" type="submit" value="Envoyer" />
+                <form method="post" action="index.php?route=ajoutMessage">
+    <label for="pseudo">Pseudo*</label><br>
+    <input type="text" id="pseudo" onfocus="verificationVide2()" onblur="verificationVide2()" onkeyup="verificationVide2()" name="Nom"><br>
+    <label for="E-mail">E-Mail*</label><br>
+    <input type="email" id="mail" onfocus="verificationVide2()" onblur="verificationVide2()" onkeyup="verificationVide2()" name="Mail"><br>
+    <label for="sujet">Sujet*</label><br>
+    <input type="text" id="sujet" onfocus="verificationVide2()" onblur="verificationVide2()" onkeyup="verificationVide2()" name="Sujet"><br>
+    <label for="content">Message*</label><br>
+    <textarea id="content" onfocus="verificationVide2()" onblur="verificationVide2()" onkeyup="verificationVide2()" name="Msg"></textarea><br>
+    <p>* (champs obligatoire)</p>
+    <input class="btn btn-primary" id="commBtn" type="submit" value="Envoyer" id="submit" name="submit">
+</form>
+
             </div>
 
         </div>
     </section>
+
