@@ -63,16 +63,12 @@
 
     </header>
     <div class="Titre">
-        <div class="col-xs-5 line">
-            <hr>
-        </div>
+
         <div class="col-xs-2 logo">
             <h1>Un Billet Simple pour l'Alaska</h1>
-            <?= $title ?>
+            <div class="titreDynamique"><?= $title ?></div>
         </div>
-        <div class="col-xs-5 line">
-            <hr>
-        </div>
+
 
     </div>
     <!-- /.container -->
