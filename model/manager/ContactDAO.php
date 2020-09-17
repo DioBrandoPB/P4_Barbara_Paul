@@ -8,7 +8,7 @@ use App\model\Parameter;
 class ContactDAO extends DAO
 {
     /* fonction buildObject qui nous permet de convertir chaque champ de la table en propriété de notre objet */
-
+    /* row = ranger */
 
     private function buildObject($row)
     {

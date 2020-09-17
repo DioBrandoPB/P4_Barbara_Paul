@@ -38,7 +38,7 @@ abstract class DAO
         }
 
     }
-
+    /* fonction permettant de verifier certaines contraintes afin de securiser les echanges avec la bdd */
     protected function createQuery($sql, $parameters = null)
     {
         if($parameters)
