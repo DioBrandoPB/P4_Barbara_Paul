@@ -7,6 +7,8 @@ use App\model\Parameter;
 
 class ChapitreDAO extends DAO
 {
+/* fonction buildObject qui nous permet de convertir chaque champ de la table en propriété de notre objet */
+
     private function buildObject($row)
     {
         $chapitre = new chapitre();

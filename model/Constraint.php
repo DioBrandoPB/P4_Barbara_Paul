@@ -4,6 +4,7 @@ namespace App\model;
 
 class Constraint
 {
+    /* permet de ne pas avoir de champs vide valider sur les formulaires */
     public function notBlank($name, $value)
     {
         if(empty($value)) {

@@ -7,6 +7,9 @@ use App\model\Parameter;
 
 class ContactDAO extends DAO
 {
+    /* fonction buildObject qui nous permet de convertir chaque champ de la table en propriété de notre objet */
+
+
     private function buildObject($row)
     {
         $contact = new contact();
@@ -21,14 +24,14 @@ class ContactDAO extends DAO
     public function ajoutMessage(Parameter $post)
     {
         $sql = 'INSERT INTO contact (Nom, Mail, Msg, Sujet) VALUES (?, ?, ?, ?)';
-        $this->createQuery($sql, [$post->get('Nom'), $post->get('Mail'),$post->get('Msg'),$post->get('Sujet')]);
+        $this->createQuery($sql, [$post->get('Nom'), $post->get('Mail'), $post->get('Msg'), $post->get('Sujet')]);
     }
     public function recupMessage()
     {
         $sql = 'SELECT * FROM contact ORDER BY id DESC ';
         $result = $this->createQuery($sql);
         $contacts = [];
-        foreach ($result as $row){
+        foreach ($result as $row) {
             $contactsid = $row['id'];
             $contacts[$contactsid] = $this->buildObject($row);
         }
@@ -36,6 +39,3 @@ class ContactDAO extends DAO
         return $contacts;
     }
 }
-
-
-

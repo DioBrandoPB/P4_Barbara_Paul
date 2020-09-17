@@ -2,6 +2,9 @@
 
 namespace App\model\Backend;
 
+/* class User qui permet de recuperer les propriétés et methodes qui nous crée ces objets séparer de son fichier DAO associé pour plus de sécurités */
+
+
 class User
 {
     /**

@@ -7,6 +7,7 @@ class Request
     private $get;
     private $post;
     private $session;
+    /* construction de l'objet parameter avec les variables superglobales get post et session */
 
     public function __construct()
     {

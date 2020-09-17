@@ -11,6 +11,7 @@ use App\model\Session;
 use App\model\manager\View;
 use App\model\Request;
 
+/* classe abstraite ne pouvans etre instancier, toutes les méthodes marquées comme abstraites dans la déclaration de la classe parente doivent être définies par l'enfant*/
 
 abstract class Controller
 {
@@ -24,7 +25,7 @@ abstract class Controller
     protected $post;
     protected $session;
 
-
+    /* construction des différents objets du site et les initialise */
     public function __construct()
     {
         $this->chapitreDAO = new ChapitreDAO();
@@ -38,5 +39,4 @@ abstract class Controller
         $this->post = $this->request->getPost();
         $this->session = $this->request->getSession();
     }
-
 }

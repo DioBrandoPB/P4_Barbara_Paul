@@ -4,6 +4,7 @@ namespace App\model\manager;
 
 use PDO;
 use Exception;
+/* gere les fonctions liées a la connection a la bdd grace a pdo et exception et l'envoie de requete */
 
 abstract class DAO
 {

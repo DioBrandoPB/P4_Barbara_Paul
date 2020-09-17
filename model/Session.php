@@ -5,6 +5,7 @@ namespace App\model;
 class Session
 {
     private $session;
+    /* construction de l'objet session */
 
     public function __construct($session)
     {

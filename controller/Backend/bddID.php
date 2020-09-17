@@ -1,4 +1,5 @@
 <?php
+    /* parametres de connection a la bdd de l'hebergeur */
 
 const HOST = 'db5000496246.hosting-data.io';
 const DB_NAME = 'dbs476058';

@@ -5,6 +5,7 @@ namespace App\model;
 class Parameter
 {
     private $parameter;
+    /* construction de l'objet parameter */
 
     public function __construct($parameter)
     {

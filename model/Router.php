@@ -26,6 +26,7 @@ class Router
     private $userController;
     private $request;
 
+    /* construction des objets lié aux différents controller gerant l'affichage des pages dans la base.php du site */
 
     public function __construct()
     {
