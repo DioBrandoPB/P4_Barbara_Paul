@@ -1,4 +1,4 @@
-<?php $this->title = 'Mon profil'; ?>
+<?php $this->titre = 'Mon profil'; ?>
 
 
 <section id="Connexion">
@@ -9,7 +9,7 @@
 
             <a class="btn btn-primary" href="index.php?route=majMDP">Modifier son mot de passe</a><br>
 
-            <a class="btn btn-primary" href="index.php?route=logout">Déconnexion</a>
+            <a class="btn btn-primary" href="index.php?route=deconnexion">Déconnexion</a>
         </div>
     </div>
 </section>

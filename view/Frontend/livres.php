@@ -1,4 +1,4 @@
-<?php $this->title = 'Livres'; ?>
+<?php $this->titre = 'Livres'; ?>
 <section id="Livres">
     <div class="blocLivres">
         <div class="row">

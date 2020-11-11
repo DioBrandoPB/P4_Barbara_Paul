@@ -393,7 +393,7 @@ h4 {
 
 /*---- Page Chapitre ----*/
 
-#comments {
+#commentaires {
     text-align: center;
     border: 2px solid #ffffff;
     background-color: #3a3a3a;
@@ -404,7 +404,7 @@ h4 {
     width: 75%;
 }
 
-.comment {
+.commentaires {
     text-align: center;
     border: 5px solid #ffffff;
     background-color: #191919;
@@ -560,6 +560,14 @@ td:hover {
 
 [data-table-theme*=zebra][data-table-theme*=dark] tbody tr:nth-of-type(odd) {
     background: rgba(255, 255, 255, .05);
+}
+
+#btnInscription {
+    display: none;
+}
+
+#chapitrebtn {
+    display: none;
 }
 
 

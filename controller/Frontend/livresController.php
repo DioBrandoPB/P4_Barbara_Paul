@@ -11,7 +11,7 @@ class livresController extends Controller
 
     public function livres() 
     {
-        return $this->view->render('livres', []);
+        return $this->vue->rendue('livres', []);
     }
 
 

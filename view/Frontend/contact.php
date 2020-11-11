@@ -1,4 +1,4 @@
-<?php $this->title = "Contact"; ?>
+<?php $this->titre = "Contact"; ?>
 
 <div id="msgSession">
 

@@ -1,5 +1,5 @@
-<?php $this->title = "Chapitres"; ?>
-<?= $this->session->show('add_article'); ?>
+<?php $this->titre = "Chapitres"; ?>
+<?= $this->session->show('ajouter_chapitre'); ?>
 
 
 <div class="Chapitres">

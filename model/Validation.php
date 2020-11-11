@@ -8,12 +8,12 @@ class Validation
     {
         if ($name === 'User') {
             $userValidation = new UserValidation();
-            $errors = $userValidation->check($data);
-            return $errors;
+            $erreurs = $userValidation->check($data);
+            return $erreurs;
         } elseif ($name === 'Comment') {
             $commentValidation = new CommentValidation();
-            $errors = $commentValidation->check($data);
-            return $errors;
+            $erreurs = $commentValidation->check($data);
+            return $erreurs;
         }
     }
 }

@@ -24,7 +24,7 @@ class Router
     private $livresController;
     private $contactController;
     private $userController;
-    private $request;
+    private $requete;
 
     /* construction des objets lié aux différents controller gerant l'affichage des pages dans la base.php du site */
 
@@ -41,7 +41,7 @@ class Router
         $this->request = new Request();
     }
 
-    public function run()
+    public function router()
     {
         $route = $this->request->getGet()->get('route');
         try {
@@ -65,7 +65,7 @@ class Router
                 } elseif ($route === 'ajoutMessage') {
                     $this->backController->ajoutMessage($this->request->getPost());
                 } elseif ($route === 'admin') {
-                    $this->backController->comments();
+                    $this->backController->admin();
                 } elseif ($route === 'upload') {
                     $this->backController->upload();
                 } elseif ($route === 'ajoutComm') {
@@ -84,18 +84,18 @@ class Router
                     $this->commentController->supprimerComm($_GET['commentId']);
                 } elseif ($route === 'validéCommentaire') {
                     $this->commentController->validéCommentaire($_GET['commentId']);
-                } elseif ($route === 'register') {
-                    $this->userController->register($this->request->getPost());
-                } elseif ($route === 'login') {
-                    $this->userController->login($this->request->getPost());
+                } elseif ($route === 'inscription') {
+                    $this->userController->inscription($this->request->getPost());
+                } elseif ($route === 'connexion') {
+                    $this->userController->connexion($this->request->getPost());
                 } elseif ($route === 'profile') {
                     $this->backController->profile();
                 } elseif ($route === 'majMDP') {
                     $this->backController->majMDP($this->request->getPost());
-                } elseif ($route === 'logout') {
-                    $this->backController->logout();
-                } elseif ($route === 'deleteUser') {
-                    $this->backController->deleteUser($this->request->getGet()->get('userId'));
+                } elseif ($route === 'deconnexion') {
+                    $this->backController->deconnexion();
+                } elseif ($route === 'supprimerUtilisateur') {
+                    $this->backController->supprimerUtilisateur($this->request->getGet()->get('utilisateurId'));
                 } else {
                     echo 'page inconnue';
                 }

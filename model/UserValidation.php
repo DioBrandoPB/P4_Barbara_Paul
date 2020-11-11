@@ -5,7 +5,7 @@ use App\model\Parameter;
 
 class UserValidation extends Validation
 {
-    private $errors = [];
+    private $erreurs = [];
     private $constraint;
 
     public function __construct()
@@ -18,25 +18,25 @@ class UserValidation extends Validation
         foreach ($post->all() as $key => $value) {
             $this->checkField($key, $value);
         }
-        return $this->errors;
+        return $this->erreurs;
     }
 
     private function checkField($name, $value)
     {
         if($name === 'pseudo') {
-            $error = $this->checkPseudo($name, $value);
-            $this->addError($name, $error);
+            $erreur = $this->checkPseudo($name, $value);
+            $this->addError($name, $erreur);
         }
         elseif ($name === 'password') {
-            $error = $this->checkPassword($name, $value);
-            $this->addError($name, $error);
+            $erreur = $this->checkPassword($name, $value);
+            $this->addError($name, $erreur);
         }
     }
 
-    private function addError($name, $error) {
-        if($error) {
-            $this->errors += [
-                $name => $error
+    private function addError($name, $erreur) {
+        if($erreur) {
+            $this->erreurs += [
+                $name => $erreur
             ];
         }
     }

@@ -1,4 +1,4 @@
-<?php $this->title = "Lecture"; ?>
+<?php $this->titre = "Lecture"; ?>
 <div id="BlocPages"></div>
 
 <div class="chapitres">
@@ -12,34 +12,36 @@
 <br>
 
     
-<div id="comments" >
+<div id="commentaires" >
     <h3>Ajouter un commentaire</h3>
-    <?php include 'form_comment.php';?>
+    <?php include 'form_commentaire.php';?>
     <h3>Commentaires</h3>
     <div class="commentaires">
     <?php
-    foreach ($comments as $comment)
+    foreach ($commentaires as $commentaire)
     {
         ?>
         <div class="comment">
-        <h4><?= htmlspecialchars($comment->getPseudo());?></h4>
-        <p><?= htmlspecialchars($comment->getContent());?></p>
-        <p>Posté le <?= date_format(date_create($comment->getCreatedAt()), 'd/m/Y');?></p>
+            
+        <h4><?= htmlspecialchars($commentaire->getPseudo());?></h4>
+        <p><?= htmlspecialchars($commentaire->getContent());?></p>
+        <p>Posté le <?= date_format(date_create($commentaire->getCreatedAt()), 'd/m/Y');?></p>
 
         <?php
-        if($comment->signalement()) {
+        if($commentaire->signalement()) {
             ?>
             <p>Ce commentaire a déjà été signalé</p></div>
             <?php
         } else {
             ?>
-            <p><a href="index.php?route=signalCommentaire&commentId=<?= $comment->getId(); ?>">Signaler le commentaire</a></p>
+            <p><a href="index.php?route=signalCommentaire&commentId=<?= $commentaire->getId(); ?>">Signaler le commentaire</a></p>
             <?php
         }
         ?>
 
-        <br>
+        <br></div>
         <?php
+        
     }
     ?>
-</div></div></div>
+</div></div>

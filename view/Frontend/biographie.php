@@ -1,4 +1,4 @@
-<?php $this->title = "A propos"; ?>
+<?php $this->titre = "A propos"; ?>
 <section id="Bio"></section>
     <div class="blocBio ">
 

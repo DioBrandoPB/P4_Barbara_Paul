@@ -13,7 +13,7 @@ class contactController extends Controller
 
     public function contact()
     {
-        return $this->view->render('contact', []);
+        return $this->vue->rendue('contact', []);
     }
 
     /* cette fonction permet d'ajouter un message via la soumission de données d'un formulaire dans la bdd via la fonction ajoutMessage du fichier

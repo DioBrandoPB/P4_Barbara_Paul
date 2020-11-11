@@ -13,12 +13,12 @@ class ChapitreDAO extends DAO
     {
         $chapitre = new chapitre();
         $chapitre->setId($row['id']);
-        $chapitre->setTitle($row['title']);
-        $chapitre->setContent($row['content']);
+        $chapitre->setTitle($row['titre']);
+        $chapitre->setContent($row['contenu']);
         $chapitre->setExtrait($row['extrait']);
-        $chapitre->setAuthor($row['author']);
+        $chapitre->setAuthor($row['autheur']);
         $chapitre->setImage($row['Images']);
-        $chapitre->setCreatedAt($row['createdAt']);
+        $chapitre->setCreatedAt($row['creea']);
         $chapitre->setStatut($row['statut']);
         return $chapitre;
     }
@@ -73,17 +73,17 @@ class ChapitreDAO extends DAO
     
     public function modifierChapitre(Parameter $post, $chapitreId)
     {
-        $sql = 'UPDATE chapitre SET title=:title, content=:content WHERE id=:chapitreId';
+        $sql = 'UPDATE chapitre SET titre=:titre, contenu=:contenu WHERE id=:chapitreId';
         $this->createQuery($sql, [
-            'title' => $post->get('title'),
-            'content' => $post->get('content'),
+            'titre' => $post->get('titre'),
+            'contenu' => $post->get('contenu'),
             'chapitreId' => $chapitreId
         ]);
     }
 
     public function supprimerChapitre($chapitreId)
     {
-        $sql = 'DELETE FROM comment WHERE article_id = ?';
+        $sql = 'DELETE FROM commentaire WHERE chapitre_id = ?';
         $this->createQuery($sql, [$chapitreId]);
         $sql = 'DELETE FROM chapitre WHERE id = ?';
         $this->createQuery($sql, [$chapitreId]);
@@ -91,11 +91,11 @@ class ChapitreDAO extends DAO
 
     public function ajouterChapitre($chapitre)
     {
-        //Permet de récupérer les variables $title, $content et $author
+        //Permet de récupérer les variables $titre, $contenu et $autheur
         extract($chapitre);
-        $sql = 'INSERT INTO chapitre (title, content, author, createdAt, statut) VALUES (?, ?, ?, NOW(), 1)';
-        $author = "Jean Forteroche";
-        $this->createQuery($sql, [$title, $content, $author]);
+        $sql = 'INSERT INTO chapitre (titre, contenu, autheur, creea, statut) VALUES (?, ?, ?, NOW(), 1)';
+        $autheur = "Jean Forteroche";
+        $this->createQuery($sql, [$titre, $contenu, $autheur]);
     }
     
     public function publierChapitre($chapitreId)

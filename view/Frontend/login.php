@@ -1,10 +1,10 @@
-<?php $this->title = "Connexion"; ?>
+<?php $this->titre = "Connexion"; ?>
 
 <section id="Connexion">
         <div class="container-fluid">
         <?= $this->session->show('error_login'); ?>
 
-    <form method="post" action="index.php?route=login">
+    <form method="post" action="index.php?route=connexion">
     <br><label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
         <label for="password">Mot de passe</label><br>

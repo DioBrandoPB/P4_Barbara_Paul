@@ -14,12 +14,12 @@ class chapitre
     /**
      * @var string
      */
-    private $title;
+    private $titre;
 
     /**
      * @var string
      */
-    private $content;
+    private $contenu;
     /**
      * @var string
      */
@@ -28,12 +28,12 @@ class chapitre
     /**
      * @var string
      */
-    private $author;
+    private $autheur;
 
     /**
      * @var \DateTime
      */
-    private $createdAt;
+    private $creea;
 
     /**
      * @var string
@@ -62,7 +62,7 @@ class chapitre
      */
     public function getTitle()
     {
-        return $this->title;
+        return $this->titre;
     }
 
     public function setImage($Images)
@@ -75,11 +75,11 @@ class chapitre
     }
 
     /**
-     * @param string $title
+     * @param string $titre
      */
-    public function setTitle($title)
+    public function setTitle($titre)
     {
-        $this->title = $title;
+        $this->titre = $titre;
     }
 
     /**
@@ -87,7 +87,7 @@ class chapitre
      */
     public function getContent()
     {
-        return $this->content;
+        return $this->contenu;
     }
     /**
     * @return string
@@ -104,11 +104,11 @@ class chapitre
         $this->extrait = $extrait;
     }
     /**
-     * @param string $content
+     * @param string $contenu
      */
-    public function setContent($content)
+    public function setContent($contenu)
     {
-        $this->content = $content;
+        $this->contenu = $contenu;
     }
 
     /**
@@ -116,15 +116,15 @@ class chapitre
      */
     public function getAuthor()
     {
-        return $this->author;
+        return $this->autheur;
     }
 
     /**
-     * @param string $author
+     * @param string $autheur
      */
-    public function setAuthor($author)
+    public function setAuthor($autheur)
     {
-        $this->author = $author;
+        $this->autheur = $autheur;
     }
 
     /**
@@ -132,15 +132,15 @@ class chapitre
      */
     public function getCreatedAt()
     {
-        return $this->createdAt;
+        return $this->creea;
     }
 
     /**
      * @param \DateTime $createdAt
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($creea)
     {
-        $this->createdAt = $createdAt;
+        $this->creea = $creea;
     }
     
     /**

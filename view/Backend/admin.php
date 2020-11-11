@@ -1,14 +1,14 @@
-<?php $this->title = 'Administration'; ?>
+<?php $this->titre = 'Administration'; ?>
 <div id="msgSession">
 
 
-<?= $this->session->show('add_article'); ?>
-<?= $this->session->show('edit_article'); ?>
+<?= $this->session->show('ajouter_chapitre'); ?>
+<?= $this->session->show('modifier_chapitre'); ?>
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('publierChapitre'); ?>
 <?= $this->session->show('brouillonnerChapitre'); ?>
-<?= $this->session->show('delete_comment'); ?>
+<?= $this->session->show('supprimer_comm'); ?>
 <?= $this->session->show('delete_user'); ?>
 </div>
 <section id="admin">
@@ -65,29 +65,29 @@
                     <td>Actions</td>
                 </tr>
                 <?php
-                foreach ($comments as $comment) {
+                foreach ($commentaires as $commentaire) {
                 ?>
                     <tr>
-                        <td><?= htmlspecialchars($comment->getPseudo()); ?></td>
-                        <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150); ?></td>
-                        <td>Créé le : <?= date_format(date_create($comment->getCreatedAt()), 'd/m/Y'); ?></td>
-                        <td class="signalement"><?= htmlspecialchars($comment->signalement()); ?></td>
-                        <td class="validation"><?= htmlspecialchars($comment->validation()); ?></td>
+                        <td><?= htmlspecialchars($commentaire->getPseudo()); ?></td>
+                        <td><?= substr(htmlspecialchars($commentaire->getContent()), 0, 150); ?></td>
+                        <td>Créé le : <?= date_format(date_create($commentaire->getCreatedAt()), 'd/m/Y'); ?></td>
+                        <td class="signalement"><?= htmlspecialchars($commentaire->signalement()); ?></td>
+                        <td class="validation"><?= htmlspecialchars($commentaire->validation()); ?></td>
                         <td>
                             <?php
-                            if ($comment->signalement()) {
+                            if ($commentaire->signalement()) {
                             ?>
-                                <a class="btn btn-primary" href="index.php?route=designalerComm&commentId=<?= $comment->getId(); ?>">Désignaler</a>
-                                <p><a class="btn btn-primary" href="index.php?route=supprimerComm&commentId=<?= $comment->getId(); ?>">Supprimer</a></p>
+                                <a class="btn btn-primary" href="index.php?route=designalerComm&commentId=<?= $commentaire->getId(); ?>">Désignaler</a>
+                                <p><a class="btn btn-primary" href="index.php?route=supprimerComm&commentId=<?= $commentaire->getId(); ?>">Supprimer</a></p>
                             <?php
-                            } else if ($comment->validation()) {
+                            } else if ($commentaire->validation()) {
                             ?>
-                                <p><a class="btn btn-primary" href="index.php?route=supprimerComm&commentId=<?= $comment->getId(); ?>">Supprimer</a></p>
+                                <p><a class="btn btn-primary" href="index.php?route=supprimerComm&commentId=<?= $commentaire->getId(); ?>">Supprimer</a></p>
 
                             <?php
                             } else { ?>
-                                <p><a class="btn btn-primary" href="index.php?route=validéCommentaire&commentId=<?= $comment->getId(); ?>">Validé</a></p>
-                                <p><a class="btn btn-primary" href="index.php?route=supprimerComm&commentId=<?= $comment->getId(); ?>">Supprimer</a></p>
+                                <p><a class="btn btn-primary" href="index.php?route=validéCommentaire&commentId=<?= $commentaire->getId(); ?>">Validé</a></p>
+                                <p><a class="btn btn-primary" href="index.php?route=supprimerComm&commentId=<?= $commentaire->getId(); ?>">Supprimer</a></p>
                             <?php   } ?>
                         </td>
                     </tr>
@@ -107,17 +107,17 @@
                     <td>Actions</td>
                 </tr>
                 <?php
-                foreach ($users as $user) {
+                foreach ($utilisateurs as $utilisateur) {
                 ?>
                     <tr>
-                        <td><?= htmlspecialchars($user->getPseudo()); ?></td>
-                        <td>Créé le : <?= date_format(date_create($user->getCreatedAt()), 'd/m/Y'); ?></td>
-                        <td><?= htmlspecialchars($user->getRole()); ?></td>
-                        <td><?= htmlspecialchars($user->getMail()); ?></td>
+                        <td><?= htmlspecialchars($utilisateur->getPseudo()); ?></td>
+                        <td>Créé le : <?= date_format(date_create($utilisateur->getCreatedAt()), 'd/m/Y'); ?></td>
+                        <td><?= htmlspecialchars($utilisateur->getRole()); ?></td>
+                        <td><?= htmlspecialchars($utilisateur->getMail()); ?></td>
                         <td><?php
-                            if ($user->getRole() != 'admin') {
+                            if ($utilisateur->getRole() != 'admin') {
                             ?>
-                                <p></p><a class="btn btn-primary" href="index.php?route=deleteUser&userId=<?= $user->getId(); ?>">Supprimer</a></p>
+                                <p></p><a class="btn btn-primary" href="index.php?route=supprimerUtilisateur&utilisateurId=<?= $utilisateur->getId(); ?>">Supprimer</a></p>
                             <?php } else {
                             ?>
                                 Suppression impossible

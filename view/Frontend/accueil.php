@@ -1,15 +1,16 @@
-<?php $this->title = "Accueil"; ?>
+<?php $this->titre = "Accueil"; ?>
 
 
 <div id="msgSession">
-<?= $this->session->show('add_article'); ?>
-<?= $this->session->show('edit_article'); ?>
+<?= $this->session->show('ajouter_chapitre'); ?>
+<?= $this->session->show('modifier_chapitre'); ?>
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('add_comment'); ?>
 <?= $this->session->show('flag_comment'); ?>
-<?= $this->session->show('delete_comment'); ?>
-<?= $this->session->show('register'); ?>
-<?= $this->session->show('login'); ?>
+<?= $this->session->show('supprimer_comm'); ?>
+<?= $this->session->show('inscription'); ?>
+<?= $this->session->show('connexion'); ?>
+<?= $this->session->show('deconnexion'); ?>
 <?= $this->session->show('envoyer_message'); ?>
 </div>
 <section id="Accueil">

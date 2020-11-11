@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title><?= $title ?></title>
+    <title><?= $titre ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -44,12 +44,12 @@
                                         <a href="index.php?route=ajouterChapitre">Nouveau Chapitre</a>
                                     <?php } ?>
 
-                                    <a href="index.php?route=logout">Déconnexion</a>
+                                    <a href="index.php?route=deconnexion">Déconnexion</a>
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="index.php?route=login">Connexion</a>
-                                    <a href="index.php?route=register">Inscription</a>
+                                    <a href="index.php?route=connexion">Connexion</a>
+                                    <a href="index.php?route=inscription">Inscription</a>
                                 <?php
                                 }
                                 ?>
@@ -66,14 +66,14 @@
 
         <div class="col-xs-2 logo">
             <h1>Un Billet Simple pour l'Alaska</h1>
-            <div class="titreDynamique"><?= $title ?></div>
+            <div class="titreDynamique"><?= $titre ?></div>
         </div>
 
 
     </div>
     <!-- /.container -->
 
-    <?= $content ?>
+    <?= $contenu ?>
 
     <footer>
         <!-- Footer contenant les liens vers les réseaux sociaux -->

@@ -8,9 +8,9 @@ use App\model\Request;
 
 class View
 {
-    private $file;
-    private $title;
-    private $request;
+    private $fichier;
+    private $titre;
+    private $requete;
     private $session;
 
     /* construction des objets request et session */
@@ -21,40 +21,40 @@ class View
         $this->session = $this->request->getSession();
     }
     /* rendu des pages frontend */
-    public function render($template, $data = [])
+    public function rendue($template, $data = [])
     {
-        $this->file = '../view/Frontend/' . $template . '.php';
-        $content  = $this->renderFile($this->file, $data);
-        $view = $this->renderFile('../view/Frontend/base.php', [
-            'title' => $this->title,
-            'content' => $content,
+        $this->fichier = '../view/Frontend/' . $template . '.php';
+        $contenu  = $this->miseEnContenue($this->fichier, $data);
+        $vue = $this->miseEnContenue('../view/Frontend/base.php', [
+            'titre' => $this->titre,
+            'contenu' => $contenu,
             'session' => $this->session
 
         ]);
-        echo $view;
+        echo $vue;
     }
     /* rendu des pages backend */
 
-    public function renderBack($template, $data = [])
+    public function rendueBack($template, $data = [])
     {
-        $this->file = '../view/Backend/' . $template . '.php';
-        $content  = $this->renderFile($this->file, $data);
-        $view = $this->renderFile('../view/Backend/base.php', [
-            'title' => $this->title,
-            'content' => $content,
+        $this->fichier = '../view/Backend/' . $template . '.php';
+        $contenu  = $this->miseEnContenue($this->fichier, $data);
+        $vue = $this->miseEnContenue('../view/Backend/base.php', [
+            'titre' => $this->titre,
+            'contenu' => $contenu,
             'session' => $this->session
 
         ]);
-        echo $view;
+        echo $vue;
     }
     /* mise en "content" via ob_start() */
 
-    private function renderFile($file, $data)
+    private function miseEnContenue($fichier, $data)
     {
-        if (file_exists($file)) {
+        if (file_exists($fichier)) {
             extract($data);
             ob_start();
-            require $file;
+            require $fichier;
             return ob_get_clean();
         }
         header('Location: index.php?route=notFound');

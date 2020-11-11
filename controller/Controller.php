@@ -3,9 +3,9 @@
 namespace App\controller;
 
 use App\model\manager\ChapitreDAO;
-use App\model\manager\CommentDAO;
+use App\model\manager\CommentaireDAO;
 use App\model\manager\ContactDAO;
-use App\model\manager\UserDAO;
+use App\model\manager\UtilisateurDAO;
 use App\model\Validation;
 use App\model\Session;
 use App\model\manager\View;
@@ -16,10 +16,10 @@ use App\model\Request;
 abstract class Controller
 {
     protected $chapitreDAO;
-    protected $commentDAO;
+    protected $commentaireDAO;
     protected $ContactDAO;
-    protected $userDAO;
-    protected $view;
+    protected $utilisateurDAO;
+    protected $vue;
     protected $validation;
     protected $get;
     protected $post;
@@ -29,10 +29,10 @@ abstract class Controller
     public function __construct()
     {
         $this->chapitreDAO = new ChapitreDAO();
-        $this->commentDAO = new CommentDAO();
+        $this->commentaireDAO = new CommentaireDAO();
         $this->ContactDAO = new ContactDAO();
-        $this->userDAO = new UserDAO();
-        $this->view = new View();
+        $this->utilisateurDAO = new UtilisateurDAO();
+        $this->vue = new View();
         $this->validation = new Validation();
         $this->request = new Request();
         $this->get = $this->request->getGet();
